@@ -1,0 +1,8 @@
+{
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "cypress-for-everything.xml",
+    "toConsole": true
+  },
+  "video": false
+}

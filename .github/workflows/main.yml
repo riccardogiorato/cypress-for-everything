@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  build:
+    name: Build and Install ⚙️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache Yarn and Node Modules 💾
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            **/node_modules
+          key: ${{ runner.os }}-yarn01-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn01-
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies 🔧
+        run: yarn install --frozen-lockfile --prefer-offline
+
+      ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
+      - name: Cache all Repo for next jobs 💾
+        uses: actions/cache@v2
+        id: cache-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+  testsCypress:
+    name: Test Cypress 🤖
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Restore Cache 💾
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Run Cypress E2E tests 🏗️
+        id: cypress-tests
+        run: |
+          yarn test
+
+      - name: Publish Cypress E2E Report 📖
+        uses: dorny/test-reporter@v1
+        if: success() || failure() # run this step even if previous step failed
+        with:
+          name: Cypress Tests Results 📖
+          path: cypress-for-everything.xml
+          reporter: java-junit
