@@ -32,6 +32,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn01-
 
+      - name: Cache Cypress 💾
+        id: cypress-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            .cache/Cypress
+          key: ${{ runner.os }}-cypress-v01-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-v01-
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
