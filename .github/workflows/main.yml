@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ${{ CYPRESS_CACHE_FOLDER }}
+            .cache/Cypress
           key: ${{ runner.os }}-cypress-v01-${{ hashFiles('yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-cypress-v01-
