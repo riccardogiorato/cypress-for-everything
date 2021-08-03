@@ -30,9 +30,9 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             **/node_modules
-          key: ${{ runner.os }}-yarn01-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-v02-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn01-
+            ${{ runner.os }}-yarn-v02-
 
       - name: Cache Cypress 💾
         id: cypress-cache
@@ -40,9 +40,9 @@ jobs:
         with:
           path: |
             .cache/Cypress
-          key: ${{ runner.os }}-cypress-v01-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-cypress-v02-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cypress-v01-
+            ${{ runner.os }}-cypress-v02-
 
       - name: Setup Node
         uses: actions/setup-node@v2
