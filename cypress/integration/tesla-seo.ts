@@ -61,6 +61,13 @@ describe("Tesla SEO", () => {
       baseUrlTesla
     );
   });
+  it("tesla.com should have correct canonical equal to location href", () => {
+    cy.get('head link[rel="canonical"]').then((canonical) => {
+      cy.location().then((loc) => {
+        expect(canonical).to.have.attr("href", loc.href);
+      });
+    });
+  });
   it("tesla.com should have correct shortlink", () => {
     cy.get('head link[rel="shortlink"]').should(
       "have.attr",
