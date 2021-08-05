@@ -4,5 +4,8 @@
     "mochaFile": "cypress-for-everything.xml",
     "toConsole": true
   },
-  "video": false
+  "retries": {
+    "runMode": 1,
+    "openMode": 0
+  }
 }

@@ -86,8 +86,22 @@ jobs:
 
       - name: Publish Cypress E2E Report 📖
         uses: dorny/test-reporter@v1
-        if: success() || failure() # run this step even if previous step failed
+        if: always()
         with:
           name: Cypress Tests Results 📖
           path: cypress-for-everything.xml
           reporter: java-junit
+
+      - name: Upload Cypress Screenshots 📷
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload Cypress Videos 📹
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
