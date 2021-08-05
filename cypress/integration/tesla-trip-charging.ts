@@ -34,7 +34,7 @@ describe("Tesla Trip", () => {
 
     cy.get("input[placeholder='Enter destination']").type("Tesla Grünheide");
     cy.get("#autocomplete > li").should("have.length.above", 0);
-    cy.get("#autocomplete > li").first().contains("Tesla Gigafactory");
+    cy.get("#autocomplete > li").first().contains("Tesla Grünheide");
     cy.get("#autocomplete > li").first().click({ force: true });
 
     cy.get(".route__btn").click();
