@@ -13,7 +13,7 @@ describe("Tesla Trip", () => {
     cy.url().should("eq", baseUrlTesla + "trips");
     cy.get("h1").should("have.text", "Go Anywhere");
   });
-  it("tesla.com charging page should lead to trips", () => {
+  it("tesla.com trips page should create route from Italy to Germany", () => {
     Cypress.on("uncaught:exception", (err, runnable) => {
       return false;
     });
@@ -32,9 +32,9 @@ describe("Tesla Trip", () => {
 
     cy.wait(2000);
 
-    cy.get("input[placeholder='Enter destination']").type("Tesla Str");
+    cy.get("input[placeholder='Enter destination']").type("Tesla Grünheide");
     cy.get("#autocomplete > li").should("have.length.above", 0);
-    cy.get("#autocomplete > li").first().contains("Tesla Str");
+    cy.get("#autocomplete > li").first().contains("Tesla Gigafactory");
     cy.get("#autocomplete > li").first().click({ force: true });
 
     cy.get(".route__btn").click();

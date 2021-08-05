@@ -92,12 +92,12 @@ jobs:
           path: cypress-for-everything.xml
           reporter: java-junit
 
-      - name: Upload Cypress Screenshots 📷
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+      # - name: Upload Cypress Screenshots 📷
+      #   uses: actions/upload-artifact@v2
+      #   if: failure()
+      #   with:
+      #     name: cypress-screenshots
+      #     path: cypress/screenshots
 
       - name: Upload Cypress Videos 📹
         uses: actions/upload-artifact@v2
