@@ -2,7 +2,7 @@ describe("Tesla Menu", () => {
   const baseUrlTesla = "https://www.tesla.com/";
   it("tesla.com should have top menu working", () => {
     cy.visit(baseUrlTesla);
-    cy.get(".tds-modal-close > .tds-icon").click();
+    cy.get(".tds-modal-close > .tds-icon").click({ force: true });
     cy.get(".tds-modal > .tds-site-nav-items").within(() => {
       cy.contains("Model S");
       cy.contains("Model 3");
