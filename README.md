@@ -1,12 +1,13 @@
-# cypress-for-everything
-Using Cypress to test everything!
+
+![Cypress to test everything!](/assets/cover-repo.jpg)
+
+
+### Do all kind of tests ranging from Http Redirects, Seo, Logins, Emails and much more!
+
 
 [Check out the latest run of the Cypress E2E tests!](https://github.com/riccardogiorato/cypress-for-everything/actions)
 
 [![CI](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml/badge.svg?branch=main&event=push)](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml)
-
-
-# Are you looking to do all sort of testing within Cypress?
 
 ## Testing Http Requests and Http Redirects
 See all kind of examples of Http tests here: [tesla-http.ts](/cypress/integration/tesla-http.ts)
