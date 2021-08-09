@@ -52,7 +52,7 @@ describe("Tesla HTTP requests and redirects", () => {
     cy.visit(urlHttpsWww);
     cy.url().should("eq", baseUrlTesla);
   });
-  it(urlHttpsWww + " redirect", () => {
+  it("200 homepage response", () => {
     cy.request({
       url: urlHttpsWww,
       followRedirect: false,
@@ -60,5 +60,20 @@ describe("Tesla HTTP requests and redirects", () => {
       expect(resp.status).to.eq(200);
       expect(resp.redirectedToUrl).to.eq(undefined);
     });
+  });
+
+  const url404test = "https://www.tesla.com/not-a-real-page";
+  it("404 'not found' response", () => {
+    cy.request({
+      url: url404test,
+      followRedirect: false,
+      failOnStatusCode: false,
+    }).then((resp) => {
+      expect(resp.status).to.eq(404);
+      expect(resp.redirectedToUrl).to.eq(undefined);
+    });
+    cy.visit(url404test, { failOnStatusCode: false });
+    cy.get(".error-code").should("contain", "404");
+    cy.get(".error-text").should("contain", "Page not found");
   });
 });
