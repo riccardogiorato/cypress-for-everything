@@ -1,12 +1,13 @@
 {
   "reporter": "junit",
   "reporterOptions": {
-    "mochaFile": "cypress-for-everything.xml",
+    "mochaFile": "report/[hash].xml",
     "toConsole": true
   },
   "retries": {
     "runMode": 1,
     "openMode": 0
   },
+  "videoCompression": false,
   "experimentalStudio": true
 }

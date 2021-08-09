@@ -104,4 +104,8 @@ dist
 .tern-port
 
 # Ignore JUNIT XML file
-cypress-for-everything.xml
+report/*.xml
+report.xml
+
+cypress/videos/*.*
+cypress/screenshots/*.*

@@ -86,12 +86,17 @@ jobs:
         run: |
           yarn test
 
+      - name: Merge all Reports
+        if: always()
+        run: |
+          yarn merge
+
       - name: Publish Cypress E2E Report 📖
         uses: dorny/test-reporter@v1
         if: always()
         with:
           name: Cypress Tests Results 📖
-          path: cypress-for-everything.xml
+          path: report.xml
           reporter: java-junit
 
       # - name: Upload Cypress Screenshots 📷
