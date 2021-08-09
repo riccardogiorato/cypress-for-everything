@@ -36,8 +36,7 @@ describe("Tesla Trip", () => {
 
     cy.get(".route__btn").click();
 
-    cy.wait(2000);
-
+    cy.wait(["@getTrips"]);
     cy.wait(["@getTrips"]);
 
     cy.get(".route__info > .copy").contains("Est. Gas Savings");
