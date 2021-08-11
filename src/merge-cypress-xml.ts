@@ -15,7 +15,11 @@ reportFilenames.forEach((reportFilename) => {
     convert.xml2json(reportXml, { ignoreComment: true, compact: true })
   );
   const cypressTestsuites = reportJson.testsuites.testsuite;
-  if (cypressTestsuites && cypressTestsuites.length > 1) {
+  if (
+    cypressTestsuites &&
+    cypressTestsuites.length > 1 &&
+    cypressTestsuites[0]._attributes.name === "Root Suite"
+  ) {
     reportJson.testsuites.testsuite.shift();
   }
   const newReportXml = convert.json2xml(JSON.stringify(reportJson), {

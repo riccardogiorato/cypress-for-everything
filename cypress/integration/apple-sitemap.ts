@@ -1,4 +1,4 @@
-describe("Vercel Sitemap", () => {
+describe("Apple Sitemap", () => {
   let urls = [];
   before(() => {
     cy.request({
