@@ -8,6 +8,7 @@ const reportFilenames = fs.readdirSync(reportDir);
 
 reportFilenames.forEach((reportFilename) => {
   const reportFilePath = "./" + reportDir + "/" + reportFilename;
+  console.log("✨ merge report", reportFilename);
   const reportXml = fs.readFileSync(reportFilePath, "utf8");
 
   const reportJson = JSON.parse(
