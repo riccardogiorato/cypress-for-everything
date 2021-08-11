@@ -98,6 +98,7 @@ jobs:
           name: Cypress Tests Results 📖
           path: report.xml
           reporter: java-junit
+          fail-on-error: "false"
 
       # - name: Upload Cypress Screenshots 📷
       #   uses: actions/upload-artifact@v2
@@ -106,9 +107,10 @@ jobs:
       #     name: cypress-screenshots
       #     path: cypress/screenshots
 
-      - name: Upload Cypress Videos 📹
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-videos
-          path: cypress/videos
+      # - name: Upload Cypress Videos 📹
+      #   uses: actions/upload-artifact@v2
+      #   if: failure()
+      #   with:
+      #     name: cypress-videos
+      #     path: cypress/videos
+      #     fail-on-error: "false"

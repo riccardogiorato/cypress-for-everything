@@ -8,6 +8,7 @@
     "runMode": 1,
     "openMode": 0
   },
-  "videoCompression": false,
+  "screenshotOnRunFailure ": false,
+  "video": false,
   "experimentalStudio": true
 }
