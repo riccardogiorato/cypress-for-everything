@@ -8,13 +8,16 @@
   "scripts": {
     "dev": "cypress open",
     "test": "cypress run",
-    "merge": "jrm ./report.xml \"./report/*.xml\""
+    "merge": "yarn ts-node ./src/merge-cypress-xml.ts"
   },
   "devDependencies": {
-    "cypress": "^8.2.0",
+    "@types/node": "^15.14.0",
+    "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "junit-report-merger": "^3.0.0"
+    "cypress": "^8.2.0",
+    "junit-report-merger": "^3.0.0",
+    "xml-js": "^1.6.11"
   }
 }
