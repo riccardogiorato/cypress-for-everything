@@ -18,6 +18,7 @@
   "dependencies": {
     "cypress": "^8.2.0",
     "junit-report-merger": "^3.0.0",
+    "structured-data-testing-tool": "^4.5.0",
     "xml-js": "^1.6.11"
   }
 }
