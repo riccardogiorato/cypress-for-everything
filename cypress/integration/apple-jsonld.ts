@@ -1,11 +1,17 @@
-describe("Apple Structured Data, Schema.org or JSON-LD", () => {
+import { StructuredDataResult } from "../plugins/structuredData";
+
+describe("Apple Structured Data", () => {
   it("apple homepage has WebPage, Organization and Website ", () => {
     cy.visit("https://www.apple.com");
     cy.task("structuredData", {
       url: "https://www.apple.com",
       schemas: ["WebPage", "Organization", "WebSite"],
     }).then((result) => {
-      expect(result.passed.length).to.equal(3);
+      const resultSD = result as StructuredDataResult;
+      expect(resultSD.passed.length).to.equal(3);
+      expect(resultSD.passed[0].schema).to.equal("WebPage");
+      expect(resultSD.passed[1].schema).to.equal("Organization");
+      expect(resultSD.passed[2].schema).to.equal("WebSite");
     });
   });
   it("apple iphone 12 has BreadcrumbList and Product ", () => {
@@ -14,9 +20,10 @@ describe("Apple Structured Data, Schema.org or JSON-LD", () => {
       url: "https://www.apple.com/iphone-12",
       schemas: ["BreadcrumbList", "Product"],
     }).then((result) => {
-      expect(result.passed.length).to.equal(2);
-      expect(result.passed[0].schema).to.equal("BreadcrumbList");
-      expect(result.passed[1].schema).to.equal("Product");
+      const resultSD = result as StructuredDataResult;
+      expect(resultSD.passed.length).to.equal(2);
+      expect(resultSD.passed[0].schema).to.equal("BreadcrumbList");
+      expect(resultSD.passed[1].schema).to.equal("Product");
     });
   });
   it("apple iphone 12 shop page has BreadcrumbList, Product and FAQPage ", () => {
@@ -24,10 +31,11 @@ describe("Apple Structured Data, Schema.org or JSON-LD", () => {
       url: "https://www.apple.com/shop/buy-iphone/iphone-12",
       schemas: ["BreadcrumbList", "Product", "FAQPage"],
     }).then((result) => {
-      expect(result.passed.length).to.equal(3);
-      expect(result.passed[0].schema).to.equal("BreadcrumbList");
-      expect(result.passed[1].schema).to.equal("Product");
-      expect(result.passed[2].schema).to.equal("FAQPage");
+      const resultSD = result as StructuredDataResult;
+      expect(resultSD.passed.length).to.equal(3);
+      expect(resultSD.passed[0].schema).to.equal("BreadcrumbList");
+      expect(resultSD.passed[1].schema).to.equal("Product");
+      expect(resultSD.passed[2].schema).to.equal("FAQPage");
     });
   });
   it("apple latest newsroom article has NewsArticle and BreadcrumbList ", () => {
@@ -41,9 +49,10 @@ describe("Apple Structured Data, Schema.org or JSON-LD", () => {
         url: location.href,
         schemas: ["NewsArticle", "BreadcrumbList"],
       }).then((result) => {
-        expect(result.passed.length).to.equal(2);
-        expect(result.passed[0].schema).to.equal("NewsArticle");
-        expect(result.passed[1].schema).to.equal("BreadcrumbList");
+        const resultSD = result as StructuredDataResult;
+        expect(resultSD.passed.length).to.equal(2);
+        expect(resultSD.passed[0].schema).to.equal("NewsArticle");
+        expect(resultSD.passed[1].schema).to.equal("BreadcrumbList");
       });
     });
   });
