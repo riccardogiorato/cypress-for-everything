@@ -11,7 +11,7 @@
     "merge": "yarn ts-node ./src/merge-cypress-xml.ts"
   },
   "devDependencies": {
-    "@types/node": "^15.14.0",
+    "@types/node": "^16.6.1",
     "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   },
