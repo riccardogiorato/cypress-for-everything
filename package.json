@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "cypress open",
     "test": "cypress run",
-    "merge": "yarn ts-node ./src/merge-cypress-xml.ts"
+    "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
+    "upgradeAll": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
     "@types/node": "^15.14.0",

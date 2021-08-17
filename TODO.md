@@ -1,7 +1,6 @@
 
 # TODO of things to do for this project
 
-* Test JSON-LD metadata from pages with simple plugin thanks to: structured-data-testing-tool 
 * Social Logins: https://github.com/lirantal/cypress-social-logins
 * Proxy: https://docs.cypress.io/guides/references/proxy-configuration
 * Test Email mailslurp: https://github.com/mailslurp/examples/tree/master/javascript-cypress-js

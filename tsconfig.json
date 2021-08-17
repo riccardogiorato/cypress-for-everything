@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["node", "cypress", "structured-data-testing-tool"],
+    "types": ["node", "cypress"],
     "typeRoots": ["./node_modules/@types"]
   }
 }

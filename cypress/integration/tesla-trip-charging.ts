@@ -1,6 +1,6 @@
 describe("Tesla Trip", () => {
   const baseUrlTesla = "https://www.tesla.com/";
-  Cypress.on("uncaught:exception", (err, runnable) => {
+  Cypress.on("uncaught:exception", () => {
     return false;
   });
 
