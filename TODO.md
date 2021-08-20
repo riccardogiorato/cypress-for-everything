@@ -6,7 +6,6 @@
 * Test Email mailslurp: https://github.com/mailslurp/examples/tree/master/javascript-cypress-js
 * Test Email mailosaur: https://github.com/mailosaur/cypress-mailosaur
 * Test Email "simple gmail": https://levz0r.medium.com/how-to-poll-a-gmail-inbox-in-cypress-io-a4286cfdb888
-* Improve Social Cover shown in the Topic List: https://github.com/topics/cypress?o=desc&s=updated
 * Auth0 Login: https://sandrino.dev/blog/writing-cypress-e2e-tests-with-auth0
 * Design Icons and Grouping Icons for the different tests
 * Create Custom Commands to reduce duplicated code!
