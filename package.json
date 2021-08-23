@@ -12,7 +12,7 @@
     "upgradeAll": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
-    "@types/node": "^15.14.0",
+    "@types/node": "^16.7.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
