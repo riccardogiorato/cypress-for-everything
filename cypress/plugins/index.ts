@@ -1,3 +1,4 @@
+import { gmailCheck, GmailCheckParam } from "./gmailCheck";
 import {
   structuredData,
   StructuredDataParam,
@@ -17,6 +18,12 @@ module.exports = (on, config) => {
       param: StructuredDataParam
     ): Promise<StructuredDataResult> {
       return await structuredData(param);
+    },
+  });
+
+  on("task", {
+    async gmailCheck(args: GmailCheckParam) {
+      return await gmailCheck(args);
     },
   });
 };
