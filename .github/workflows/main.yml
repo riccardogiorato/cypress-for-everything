@@ -64,7 +64,7 @@ jobs:
         run: yarn refreshGmailToken
 
       - name: Upload Config to S3 📤
-        run: aws s3 sync ./cypress/plugins s3://cypress-for-everything/cypress/plugins --include "*.json"
+        run: aws s3 sync ./cypress/plugins s3://cypress-for-everything/cypress/plugins --exclude "*.ts" --include "*.json"
 
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
