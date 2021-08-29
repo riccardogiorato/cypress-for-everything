@@ -6,7 +6,7 @@
   "author": "Riccardo Giorato <riccardoemanuelegiorato@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cypress open",
+    "dev": "doppler run -- cypress open",
     "test": "cypress run",
     "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
     "upgradeAll": "yarn upgrade-interactive --latest"

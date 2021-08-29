@@ -13,6 +13,8 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   CYPRESS_CACHE_FOLDER: ./.cache/Cypress
+  EMAIL_PRE: ${{ secrets.EMAIL_PRE }}
+  EMAIL_POST: ${{ secrets.EMAIL_POST }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
