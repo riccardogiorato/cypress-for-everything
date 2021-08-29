@@ -9,7 +9,8 @@
     "dev": "doppler run -- cypress open",
     "test": "cypress run",
     "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
-    "upgradeAll": "yarn upgrade-interactive --latest"
+    "upgradeAll": "yarn upgrade-interactive --latest",
+    "refreshGmailToken": "yarn ts-node ./cypress/plugins/refreshGmailToken"
   },
   "devDependencies": {
     "@types/node": "^15.14.0",

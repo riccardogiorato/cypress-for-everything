@@ -1,4 +1,4 @@
-name: CI
+name: Main CI workflow
 
 on:
   workflow_dispatch:
@@ -59,6 +59,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
+
+      - name: Refresh Gmail Access Token 🔄
+        run: yarn refreshGmailToken
+
+      - name: Upload Config to S3 📤
+        run: aws s3 sync ./cypress/plugins s3://cypress-for-everything/cypress/plugins --include "*.json"
 
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
