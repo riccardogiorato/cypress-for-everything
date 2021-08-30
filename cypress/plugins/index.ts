@@ -3,7 +3,7 @@ import {
   structuredData,
   StructuredDataParam,
   StructuredDataResult,
-} from "./structuredData";
+} from "./structured-data-testing-tool";
 
 require("ts-node").register({
   transpileOnly: true,
@@ -13,9 +13,6 @@ require("ts-node").register({
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  config.env.EMAIL_PRE = process.env.EMAIL_PRE;
-  config.env.EMAIL_POST = process.env.EMAIL_POST;
-
   on("task", {
     async structuredData(
       param: StructuredDataParam

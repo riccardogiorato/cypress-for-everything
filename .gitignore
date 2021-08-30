@@ -111,3 +111,4 @@ cypress/videos/*.*
 cypress/screenshots/*.*
 cypress/plugins/credentials.json
 cypress/plugins/token.json
+cypress/fixtures/*.*

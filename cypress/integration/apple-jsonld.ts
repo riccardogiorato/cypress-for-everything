@@ -1,4 +1,4 @@
-import { StructuredDataResult } from "../plugins/structuredData";
+import { StructuredDataResult } from "../plugins/structured-data-testing-tool";
 
 describe("Apple Structured Data", () => {
   it("apple homepage has WebPage, Organization and Website ", () => {

@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "doppler run -- cypress open",
+    "devterm": "doppler run -- cypress run",
     "test": "cypress run",
     "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
     "upgradeAll": "yarn upgrade-interactive --latest",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "cypress": "^8.3.1",
+    "cypress-mailslurp": "^1.1.0",
     "gmail-tester": "^1.3.2",
     "junit-report-merger": "^3.0.1",
     "structured-data-testing-tool": "^4.5.0",
