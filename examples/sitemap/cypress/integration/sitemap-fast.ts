@@ -1,4 +1,4 @@
-describe("Vercel Sitemap", () => {
+describe("Sitemap Fast Check", () => {
   let urls = [];
   before(() => {
     cy.request({
@@ -19,8 +19,7 @@ describe("Vercel Sitemap", () => {
   });
 
   it("should succesfully load each url in the sitemap", () => {
-    const [homepage, ...restUrl] = urls;
-    restUrl.forEach((url) => {
+    urls.forEach((url) => {
       cy.request({
         url: url,
         headers: {
