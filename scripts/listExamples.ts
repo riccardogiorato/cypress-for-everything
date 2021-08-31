@@ -7,7 +7,7 @@ async function listExamples() {
     const matrixExamples = { includes: [] };
     examplesList.map((exampleFoldername) => {
       matrixExamples.includes.push({
-        dir: exampleFoldername,
+        example: exampleFoldername,
       });
     });
     console.log(`::set-output name=matrix::${JSON.stringify(matrixExamples)}`);

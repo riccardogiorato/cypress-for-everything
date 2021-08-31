@@ -97,13 +97,14 @@ jobs:
         run: yarn ts-node ./scripts/listExamples.ts
 
   examplesTest:
-    name: Test Examples 🤖🤖🤖
+    name: Test Example
     runs-on: ubuntu-latest
     needs: [build, examplesMatrix]
     strategy:
       matrix: ${{fromJson(needs.examplesMatrix.outputs.matrix)}}
     steps:
-      - run: echo ${{ matrix.dir }}
+      - run: echo ${{ matrix }}
+      - run: echo ${{ matrix.example }}
 
       - name: Restore Cache 💾
         uses: actions/cache@v2
@@ -112,25 +113,25 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - name: Test ${{ matrix.dir }} 🏗️
+      - name: Test 🏗️
         id: cypress-test
         run: |
-          cd examples/${{ matrix.dir }}
+          cd examples/${{ matrix.example }}
           yarn test
 
-      - name: Upload Video ${{ matrix.dir }} 📹
+      - name: Upload Video 📹
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: 📹 video ${{ matrix.dir }}
-          path: examples/${{ matrix.dir }}/cypress/videos
+          name: 📹 video ${{ matrix.example }}
+          path: examples/${{ matrix.example }}/cypress/videos
           retention-days: 10
 
-      - name: Store Report XML Results ${{ matrix.dir }}
+      - name: Store Report XML Results
         uses: actions/upload-artifact@v2
         if: always()
         with:
-          name: report xml ${{ matrix.dir }}
+          name: report xml ${{ matrix.example }}
           path: report/*.xml
           retention-days: 1
 
