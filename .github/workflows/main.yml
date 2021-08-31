@@ -110,7 +110,7 @@ jobs:
           key: ${{ github.sha }}
 
       - name: Test ${{ matrix.dir }} 🏗️
-        id: cypress-test-${{ matrix.dir }}
+        id: cypress-test
         run: |
           cd examples/${{ matrix.dir }}
           yarn test
