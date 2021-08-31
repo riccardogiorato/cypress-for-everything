@@ -8,7 +8,7 @@ on:
     branches:
       - main
   pull_request:
-    types: [synchronize]
+    types: [opened, synchronize]
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -80,10 +80,61 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-  testsCypress:
-    name: Test Cypress 🤖
+  examplesMatrix:
+    name: Create Examples Matrix 🔧
     runs-on: ubuntu-latest
-    needs: build
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Create Matrix Examples 🔧
+        id: matrix
+        run: yarn ts-node .\scripts\listExamples.ts
+
+  examplesTest:
+    name: Test Examples 🤖🤖🤖
+    runs-on: ubuntu-latest
+    needs: [build, examplesMatrix]
+    strategy:
+      matrix: ${{fromJson(needs.examplesMatrix.outputs.matrix)}}
+    steps:
+      - run: echo ${{ matrix.dir }}
+
+      - name: Restore Cache 💾
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - name: Test ${{ matrix.dir }} 🏗️
+        id: cypress-test-${{ matrix.dir }}
+        run: |
+          cd examples/${{ matrix.dir }}
+          yarn test
+
+      - name: Upload Video ${{ matrix.dir }} 📹
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: 📹 video ${{ matrix.dir }}
+          path: examples/${{ matrix.dir }}/cypress/videos
+          retention-days: 10
+
+      - name: Store Report XML Results ${{ matrix.dir }}
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: report xml ${{ matrix.dir }}
+          path: report/*.xml
+          retention-days: 1
+
+  examplesResults:
+    name: Result Examples 📊
+    runs-on: ubuntu-latest
+    needs: [build, examplesTest]
     steps:
       - name: Restore Cache 💾
         uses: actions/cache@v2
@@ -92,41 +143,22 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - name: Downlod all Artifacts
+        uses: actions/download-artifact@v2
         with:
-          node-version: "14"
+          path: report
 
-      - name: Run Cypress E2E tests 🏗️
-        id: cypress-tests
-        run: |
-          yarn test
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: report
 
       - name: Merge all Reports
-        if: always()
         run: |
           yarn merge
 
       - name: Publish Cypress E2E Report 📖
         uses: dorny/test-reporter@v1
-        if: always()
         with:
           name: Cypress Tests Results 📖
           path: report.xml
           reporter: java-junit
-          fail-on-error: "false"
-
-      # - name: Upload Cypress Screenshots 📷
-      #   uses: actions/upload-artifact@v2
-      #   if: failure()
-      #   with:
-      #     name: cypress-screenshots
-      #     path: cypress/screenshots
-
-      - name: Upload Cypress Videos 📹
-        uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          fail-on-error: "false"
