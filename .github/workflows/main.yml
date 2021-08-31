@@ -94,7 +94,7 @@ jobs:
 
       - name: Create Matrix Examples 🔧
         id: matrix
-        run: yarn ts-node .\scripts\listExamples.ts
+        run: yarn ts-node ./scripts/listExamples.ts
 
   examplesTest:
     name: Test Examples 🤖🤖🤖
