@@ -4,9 +4,9 @@ const fsPromises = fs.promises;
 async function listExamples() {
   try {
     const examplesList = await fsPromises.readdir("examples");
-    const matrixExamples = { includes: [] };
+    const matrixExamples = [];
     examplesList.map((exampleFoldername) => {
-      matrixExamples.includes.push({
+      matrixExamples.push({
         example: exampleFoldername,
       });
     });

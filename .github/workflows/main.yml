@@ -101,9 +101,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, examplesMatrix]
     strategy:
-      matrix: ${{fromJson(needs.examplesMatrix.outputs.matrix)}}
+      matrix:
+        example: ${{fromJson(needs.examplesMatrix.outputs.matrix)}}
     steps:
-      - run: echo ${{ matrix }}
       - run: echo ${{ matrix.example }}
 
       - name: Restore Cache 💾
