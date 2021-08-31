@@ -6,9 +6,7 @@ async function listExamples() {
     const examplesList = await fsPromises.readdir("examples");
     const matrixExamples = [];
     examplesList.map((exampleFoldername) => {
-      matrixExamples.push({
-        example: exampleFoldername,
-      });
+      matrixExamples.push(exampleFoldername);
     });
     console.log(`::set-output name=matrix::${JSON.stringify(matrixExamples)}`);
   } catch (err) {
