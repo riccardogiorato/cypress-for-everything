@@ -172,3 +172,4 @@ jobs:
         id: restore-build
         with:
           name: report-xml-${{ matrix.example }}
+          failOnError: false
