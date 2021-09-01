@@ -45,9 +45,3 @@ If the server sends us back a 200 response we continue to the next page!
 
 - [Fast Sitemap Check](cypress/integration/sitemap-fast.ts): check the sitemap fast, checks only 200 response to page urls
 - [Slow Sitemap Check](cypress/integration/sitemap-slow.ts): check the complete page fully loaded
-- 
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/riccardogiorato/cypress-for-everything/tree/main/examples/sitemap)

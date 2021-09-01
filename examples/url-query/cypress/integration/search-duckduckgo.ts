@@ -1,5 +1,5 @@
-describe("DuckdDuckGo Search with Url Search params", () => {
-  it("should display different url query parameters searching on duckduckgo", () => {
+describe("DuckdDuckGo Search with Url Search parameters", () => {
+  it("should display different url query parameters", () => {
     cy.visit("https://duckduckgo.com/");
     const searchedText = "testing duckduckgo search";
     cy.get("#search_form_homepage").type(searchedText);
