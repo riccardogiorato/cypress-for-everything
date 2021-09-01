@@ -22,7 +22,7 @@ export const gmailCheck = async ({
       from: from,
       to: to,
       wait_time_sec: 5, // Poll interval (in seconds).
-      max_wait_time_sec: 30, // Maximum poll time (in seconds), after which we'll giveup.
+      max_wait_time_sec: 120, // Maximum poll time (in seconds), after which we'll giveup.
       include_body: true,
     }
   );

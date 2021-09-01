@@ -8,8 +8,7 @@
   "private": true,
   "scripts": {
     "merge": "yarn ts-node ./scripts/merge-cypress-xml.ts",
-    "upgradeAll": "yarn upgrade-interactive --latest",
-    "refreshGmailToken": "yarn ts-node ./cypress/plugins/refreshGmailToken"
+    "upgradeAll": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
     "@types/node": "^15.14.0",

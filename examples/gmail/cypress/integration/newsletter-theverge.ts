@@ -25,11 +25,15 @@ describe("The Verge: Verge Deals Newsletter", async function () {
   });
 
   it("Verge Deals Form: Email is delievered", function () {
-    cy.task("gmailCheck", {
-      from: "deals@theverge.com",
-      to: incoming_mailbox,
-      subject: "Please confirm your sign-up to Verge Deals!",
-    }).then((email) => {
+    cy.task(
+      "gmailCheck",
+      {
+        from: "deals@theverge.com",
+        to: incoming_mailbox,
+        subject: "Please confirm your sign-up to Verge Deals!",
+      },
+      { timeout: 120 * 1000 }
+    ).then((email) => {
       console.log(email);
       assert.isNotNull(email, `Email to confirm newsletter sign-up was found!`);
     });
