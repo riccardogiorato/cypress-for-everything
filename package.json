@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
+    "merge": "yarn ts-node ./scripts/merge-cypress-xml.ts",
     "upgradeAll": "yarn upgrade-interactive --latest",
     "refreshGmailToken": "yarn ts-node ./cypress/plugins/refreshGmailToken"
   },
