@@ -23,8 +23,10 @@ concurrency:
 
 jobs:
   build:
-    name: Build and Install ⚙️
+    name: Install ⚙️ & Examples Matrix 🔧
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -70,6 +72,10 @@ jobs:
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
 
+      - name: Create Matrix Examples ⚡
+        id: matrix
+        run: yarn ts-node ./scripts/listExamples.ts
+
       ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
       - name: Cache all Repo for next jobs 💾
         uses: actions/cache@v2
@@ -78,31 +84,13 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-  examplesMatrix:
-    name: Create Examples Matrix 🔧
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.matrix.outputs.matrix }}
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
-
-      - name: Install only packages needed for core
-        run: |
-          rm -rf examples
-          yarn install --no-lockfile
-
-      - name: Create Matrix Examples 🔧
-        id: matrix
-        run: yarn ts-node ./scripts/listExamples.ts
-
   examplesTest:
     name: Test Example
     runs-on: ubuntu-latest
-    needs: [build, examplesMatrix]
+    needs: [build]
     strategy:
       matrix:
-        example: ${{fromJson(needs.examplesMatrix.outputs.matrix)}}
+        example: ${{fromJson(needs.build.outputs.matrix)}}
     steps:
       - name: Restore Cache 💾
         uses: actions/cache@v2
