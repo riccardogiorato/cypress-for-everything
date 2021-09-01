@@ -17,6 +17,7 @@ env:
   CYPRESS_EMAIL_POST: ${{ secrets.CYPRESS_EMAIL_POST }}
   CYPRESS_EMAIL_PRE: ${{ secrets.CYPRESS_EMAIL_PRE }}
   CYPRESS_MAILSLURP_API_KEY: ${{ secrets.CYPRESS_MAILSLURP_API_KEY }}
+  CACHE_VER: v03
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -45,18 +46,18 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             **/node_modules
-          key: ${{ runner.os }}-yarn-v02-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{env.CACHE_VER}}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v02-
+            ${{ runner.os }}-yarn-${{env.CACHE_VER}}-
 
       - name: Cache Cypress 💾
         id: cypress-cache
         uses: actions/cache@v2
         with:
           path: ${{env.CYPRESS_CACHE_FOLDER}}
-          key: ${{ runner.os }}-cypress-v02-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-cypress-${{env.CACHE_VER}}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cypress-v02-
+            ${{ runner.os }}-cypress-${{env.CACHE_VER}}-
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -98,6 +99,10 @@ jobs:
         with:
           path: ./*
           key: ${{ github.sha }}
+
+      - run: ls /home/runner/work/cypress-for-everything/cypress-for-everything/
+
+      - run: ls /home/runner/work/cypress-for-everything/cypress-for-everything/.cache/
 
       - name: Test 🏗️
         id: cypress-test
