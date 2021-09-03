@@ -1,10 +1,9 @@
 {
   "fixturesFolder": false,
   "supportFile": false,
-  "pluginsFile": false,
   "reporter": "junit",
   "reporterOptions": {
-    "mochaFile": "report/[hash].xml",
+    "mochaFile": "../../report/[hash].xml",
     "toConsole": true
   },
   "retries": {

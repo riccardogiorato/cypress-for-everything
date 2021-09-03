@@ -1,4 +1,4 @@
-describe("Tesla Trip", () => {
+describe("Tesla Trips", () => {
   const baseUrlTesla = "https://www.tesla.com/";
   Cypress.on("uncaught:exception", () => {
     return false;

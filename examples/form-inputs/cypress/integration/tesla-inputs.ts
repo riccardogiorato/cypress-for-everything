@@ -1,4 +1,4 @@
-describe("Tesla Newsletter Form", async function () {
+describe("Tesla Newsletter Form Inputs", async function () {
   const test_id = new Date().getTime();
   const fake_email = `fake.email.cypress4everything+${test_id}@gmail.com`;
 
