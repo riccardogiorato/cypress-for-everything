@@ -30,8 +30,7 @@ describe("Tesla Enagage Email Registration", async function () {
     cy.mailslurp()
       // use inbox id and a timeout of 30 seconds
       .then((mailslurp) =>
-        mailslurp.waitForLatestEmail(this.inboxId, 30000, true)
-      )
+        mailslurp.waitForLatestEmail(this.inboxId)
       // extract the confirmation code from the email body
       .then((email) => {
         expect(email.from).to.equal("engage@tesla.com");

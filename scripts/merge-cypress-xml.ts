@@ -4,9 +4,12 @@ import * as convert from "xml-js";
 
 const reportDir = "report";
 
-const reportFilenames = fs.readdirSync(reportDir);
+const reportFilenames = fs
+  .readdirSync(reportDir, { withFileTypes: true })
+  .filter((dirent) => dirent.isFile());
 
-reportFilenames.forEach((reportFilename) => {
+reportFilenames.forEach((reportFile) => {
+  const reportFilename = reportFile.name;
   const reportFilePath = "./" + reportDir + "/" + reportFilename;
   console.log("✨ merge report", reportFilename);
   const reportXml = fs.readFileSync(reportFilePath, "utf8");

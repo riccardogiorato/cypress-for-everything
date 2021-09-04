@@ -127,13 +127,9 @@ jobs:
         with:
           path: report
 
-      - name: Display report Artifacts
-        run: ls ./report
-
       - name: Move all reports to root report folder
         run: |
           mv ./report/*/*.xml ./report/ # dont use '-force' to check for errors
-          find ./report -type d -empty -delete
 
       - name: Merge all Reports
         run: |

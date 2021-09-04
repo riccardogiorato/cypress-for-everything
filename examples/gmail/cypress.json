@@ -11,5 +11,8 @@
     "openMode": 0
   },
   "screenshotOnRunFailure ": false,
-  "experimentalStudio": true
+  "experimentalStudio": true,
+  "defaultCommandTimeout": 30000,
+  "responseTimeout": 30000,
+  "requestTimeout": 30000
 }
