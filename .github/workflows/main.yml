@@ -98,7 +98,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: failure()
         with:
-          name: video from example "${{ matrix.example }}"
+          name: video from example ${{ matrix.example }}
           path: ${{ github.workspace }}/examples/${{ matrix.example }}/cypress/videos
           retention-days: 10
 
@@ -145,6 +145,7 @@ jobs:
           name: Cypress Tests Results 📖
           path: report.xml
           reporter: java-junit
+          fail-on-error: "false"
 
   examplesClean:
     name: Clean Example
