@@ -1,4 +1,8 @@
 describe("The Verge: Verge Deals Newsletter", async function () {
+  Cypress.on("uncaught:exception", () => {
+    return false;
+  });
+
   const test_id = new Date().getTime();
   const incoming_mailbox = `${Cypress.env(
     "EMAIL_PRE"
