@@ -1,47 +1,25 @@
-# Sitemap
+# Structured Data
 
-## Getting the array of all the Urls from the sitemap.xml 
-```javascript
-  let urls = [];
-  before(() => {
-    cy.request({
-      url: "https://www.vercel.com/sitemap.xml",
-      headers: {
-        "Content-Type": "text/xml; charset=utf-8",
-        "user-agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
-      },
-    })
-      .as("sitemap")
-      .then((response) => {
-        urls = Cypress.$(response.body)
-          .find("loc")
-          .toArray()
-          .map((el) => el.innerText);
-      });
-  });
+Looking on the web you can find a few webistes to test out "Structured Data", most of them are mantained by Google but you always need to test manually with different Urls.
+
+I wasn't happy with this workflow that's why I implemented "Structured Data Testing Tool" directly from withing Cypress!
+
+To make it possible I had to follow the following steps:
+1. Find a node/NPM package to test strucutred data
+2. Implement a simple "Cypress Plugin" interface to make this package usable from within Cypress
+3. Finally use the plugin to run this task and test out different pages.
+
+## Examples
+- [Apple Store testing for Strucutred Data](cypress/integration/apple-store.ts)
+
+## How does it work? 
+To solve the previous 3 steps we did the following:
+1. Install the package "structured-data-testing-tool" with
+```typescript
+yarn add structured-data-testing-tool
 ```
+2. Create the Cypress Plugin code, you can copy most of the code from the plugins folder here, especially these 2 files:
+- [cypress/plugins/structured-data-testing-tool/index.ts](cypress/plugins/structured-data-testing-tool/index.ts)
+- [cypress/plugins/index.ts](cypress/plugins/index.ts)
 
-## Full Check
-
-For a complete check we then need to check if the Urls are valid.
-
-```javascript
-  it("should succesfully load each url in the sitemap", () => {
-    urls.forEach((url) => {
-      cy.visit(url);
-    });
-  });
-```
-
-## Fast Check
-
-Checking a sitemap for missing pages can take a long time with cypress using cy.visit.
-This is due to the fact that "cy.visit" will wait for the page javascript to have fully loaded.
-If we want to check the rendered pages faster we just check for the response from the server when we ask for the page.
-If the server sends us back a 200 response we continue to the next page!
-
-## Integration Files
-
-- [Fast Sitemap Check](cypress/integration/sitemap-fast.ts): check the sitemap fast, checks only 200 response to page urls
-- [Slow Sitemap Check](cypress/integration/sitemap-slow.ts): check the complete page fully loaded
+3. Write some tests to test out the plugin: [apple-store](cypress/integration/apple-store.ts)
