@@ -32,6 +32,14 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      - name: Check for Broken Links 🔎
+          uses: urlstechie/urlchecker-action@0.2.1
+          with:
+            file_types: .md
+            print_all: false
+            timeout: 10
+            retry_count: 3
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
