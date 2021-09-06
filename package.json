@@ -5,13 +5,10 @@
   "repository": "https://github.com/riccardogiorato/cypress-for-everything.git",
   "author": "Riccardo Giorato <riccardoemanuelegiorato@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "doppler run -- cypress open",
-    "devterm": "doppler run -- cypress run",
-    "test": "cypress run",
-    "merge": "yarn ts-node ./src/merge-cypress-xml.ts",
-    "upgradeAll": "yarn upgrade-interactive --latest",
-    "refreshGmailToken": "yarn ts-node ./cypress/plugins/refreshGmailToken"
+    "merge": "yarn ts-node ./scripts/merge-cypress-xml.ts",
+    "upgradeAll": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
     "@types/node": "^15.14.0",
@@ -19,11 +16,12 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "cypress": "^8.3.1",
-    "cypress-mailslurp": "^1.1.0",
-    "gmail-tester": "^1.3.2",
     "junit-report-merger": "^3.0.1",
-    "structured-data-testing-tool": "^4.5.0",
     "xml-js": "^1.6.11"
+  },
+  "workspaces": {
+    "packages": [
+      "examples/*"
+    ]
   }
 }

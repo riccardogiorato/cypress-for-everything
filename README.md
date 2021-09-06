@@ -9,60 +9,19 @@
 
 [![CI](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml/badge.svg?branch=main&event=push)](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml)
 
-## Testing Http Requests and Http Redirects
-See all kind of examples of Http tests here: [tesla-http.ts](/cypress/integration/tesla-http.ts)
-```typescript
-it("http://tesla.com redirect", () => {
-    cy.request({
-      url: "http://tesla.com",
-      followRedirect: false,
-    }).then((resp) => {
-      expect(resp.status).to.eq(301);
-      expect(resp.redirectedToUrl).to.eq("https://www.tesla.com");
-    });
-});
-```
 
-## Testing SEO stuff like Titles, Canonicals Open Graph and Twitter metatags
-See all kind of examples of SEO tests here: [tesla-seo.ts](/cypress/integration/tesla-seo.ts)
+## Examples
 
-### Testing Page Title
-```typescript
-  it("tesla.com should have correct title", () => {
-    cy.visit("https://www.tesla.com/");
-    cy.title().should("eq", "Electric Cars, Solar & Clean Energy | Tesla");
-  });
-```
-### Testing Page Canonical
-```typescript
-  it("tesla.com should have correct canonical", () => {
-    cy.visit("https://www.tesla.com/");
-    cy.get('head link[rel="canonical"]').should(
-      "have.attr",
-      "href",
-      "https://www.tesla.com/"
-    );
-  });
-```
-### Testing Open Graph og:site_name
-```typescript
-  it("tesla.com should have correct og:site_name", () => {
-    cy.visit("https://www.tesla.com/");
-    cy.get('head meta[property="og:site_name"]').should(
-      "have.attr",
-      "content",
-      "Tesla"
-    );
-  });
-```
-### Testing Twitter metatag like twitter:creator
-```typescript
-  it("tesla.com should have correct twitter:creator", () => {
-    cy.visit("https://www.tesla.com/");
-    cy.get('head meta[name="twitter:creator"]').should(
-      "have.attr",
-      "content",
-      "@tesla"
-    );
-  });
-```
+You can find all the examples list inside the "examples" folder here: 
+### [examples/](examples/)
+
+- [examples/form-inputs](examples/form-inputs): testing out different types of forms and inputs.
+- [examples/gmail](examples/gmail): testing email workflows with a free gmail accounts or with paid gsuite accounts from UI submission to email delivery.
+- [examples/http-response-status](examples/http-response-status): testing different http response status codes like 200/300/404 and also various redirects 301!
+- [examples/mailslurp](examples/mailslurp): testing email workflows with "mailslurp" an email service to create email inboxes for testing all from their Cypress plugin.
+- [examples/metatags](examples/metatags): all search engines and social networks love metatags and we will test them out to prevent and bug, ranging from twitter:tilte, moving to title and description and finally all open graph tags like og:title or og:url and more! 
+- [examples/sitemap](examples/sitemap): we will prevent dead links and unwanted pages to appear from the sitemap.xml file by checking all of the sitemap links.
+- [examples/structured-data](examples/structured-data): Google loves Strucutred Data and we will test them without having to manually do this step by using a great NPM package called "structured-data-testing-tool".
+- [examples/tesla](examples/tesla): I really live Tesla so I will test various parts of their website to make sure they are working as expected.
+- [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implment their search funcionalities and we will test them.
+

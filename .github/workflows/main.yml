@@ -7,31 +7,38 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [synchronize]
+      - "*"
 
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  CYPRESS_CACHE_FOLDER: ./.cache/Cypress
+  CYPRESS_CACHE_FOLDER: ${{ github.workspace }}/.cache/Cypress
   CYPRESS_EMAIL_POST: ${{ secrets.CYPRESS_EMAIL_POST }}
   CYPRESS_EMAIL_PRE: ${{ secrets.CYPRESS_EMAIL_PRE }}
   CYPRESS_MAILSLURP_API_KEY: ${{ secrets.CYPRESS_MAILSLURP_API_KEY }}
+  CACHE_VER: v03
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   build:
-    name: Build and Install ⚙️
+    name: Install ⚙️ & Examples Matrix 🔧
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Download Config from S3 📥
-        run: aws s3 sync s3://cypress-for-everything ./
+      - name: Check for Broken Links 🔎
+        uses: urlstechie/urlchecker-action@master
+        with:
+          file_types: .md
+          print_all: false
+          timeout: 10
+          retry_count: 3
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -44,33 +51,25 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             **/node_modules
-          key: ${{ runner.os }}-yarn-v02-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{env.CACHE_VER}}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v02-
+            ${{ runner.os }}-yarn-${{env.CACHE_VER}}-
 
       - name: Cache Cypress 💾
         id: cypress-cache
         uses: actions/cache@v2
         with:
-          path: |
-            .cache/Cypress
-          key: ${{ runner.os }}-cypress-v02-${{ hashFiles('yarn.lock') }}
+          path: ${{env.CYPRESS_CACHE_FOLDER}}
+          key: ${{ runner.os }}-cypress-${{env.CACHE_VER}}-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cypress-v02-
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Refresh Gmail Access Token 🔄
-        run: yarn refreshGmailToken
-
-      - name: Upload Config to S3 📤
-        run: aws s3 sync ./cypress/plugins s3://cypress-for-everything/cypress/plugins --exclude "*.ts" --include "*.json"
+            ${{ runner.os }}-cypress-${{env.CACHE_VER}}-
 
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Create Matrix Examples ⚡
+        id: matrix
+        run: yarn ts-node ./scripts/listExamples.ts
 
       ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
       - name: Cache all Repo for next jobs 💾
@@ -80,10 +79,14 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-  testsCypress:
-    name: Test Cypress 🤖
+  examplesTest:
+    name: Test Example
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build]
+    strategy:
+      fail-fast: false
+      matrix:
+        example: ${{fromJson(needs.build.outputs.matrix)}}
     steps:
       - name: Restore Cache 💾
         uses: actions/cache@v2
@@ -92,41 +95,74 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Run Cypress E2E tests 🏗️
-        id: cypress-tests
+      - name: Test 🏗️
+        id: cypress-test
         run: |
+          cd examples/${{ matrix.example }}
+          yarn postsetup || echo "no postsetup"
           yarn test
 
+      - name: Upload Video 📹
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: video from example ${{ matrix.example }}
+          path: ${{ github.workspace }}/examples/${{ matrix.example }}/cypress/videos
+          retention-days: 10
+
+      - name: Store Report XML Results
+        uses: actions/upload-artifact@v2
+        if: success()
+        with:
+          name: report-xml-${{ matrix.example }}
+          path: report/*.xml
+          retention-days: 1
+
+  examplesResults:
+    name: Result Examples 📊
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [build, examplesTest]
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Install only packages needed for core
+        run: yarn add -W ts-node
+
+      - name: Downlod report Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: report
+
+      - name: Move all reports to root report folder
+        run: |
+          mv ./report/*/*.xml ./report/ # dont use '-force' to check for errors
+
       - name: Merge all Reports
-        if: always()
         run: |
           yarn merge
 
       - name: Publish Cypress E2E Report 📖
         uses: dorny/test-reporter@v1
-        if: always()
         with:
           name: Cypress Tests Results 📖
           path: report.xml
           reporter: java-junit
           fail-on-error: "false"
 
-      # - name: Upload Cypress Screenshots 📷
-      #   uses: actions/upload-artifact@v2
-      #   if: failure()
-      #   with:
-      #     name: cypress-screenshots
-      #     path: cypress/screenshots
-
-      - name: Upload Cypress Videos 📹
-        uses: actions/upload-artifact@v2
-        if: failure()
+  examplesClean:
+    name: Clean Example
+    runs-on: ubuntu-latest
+    needs: [build, examplesResults]
+    if: always()
+    strategy:
+      matrix:
+        example: ${{fromJson(needs.build.outputs.matrix)}}
+    steps:
+      - name: Delete Report XML Artifact
+        uses: geekyeggo/delete-artifact@v1
+        id: restore-build
         with:
-          name: cypress-videos
-          path: cypress/videos
-          fail-on-error: "false"
+          name: report-xml-${{ matrix.example }}
+          failOnError: false

@@ -1,0 +1,14 @@
+{
+  "name": "gmail",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "doppler run -- cypress open",
+    "test": "cypress run",
+    "postsetup": "yarn ts-node ./cypress/plugins/refreshGmailToken"
+  },
+  "dependencies": {
+    "cypress": "^8.3.1",
+    "gmail-tester": "^1.3.2"
+  }
+}

@@ -107,8 +107,6 @@ dist
 report/*.xml
 report.xml
 
-cypress/videos/*.*
-cypress/screenshots/*.*
-cypress/plugins/credentials.json
-cypress/plugins/token.json
-cypress/fixtures/*.*
+# Ignore Cypress Temp files from examples
+examples/*/cypress/videos/*.*
+examples/*/cypress/screenshots/*.*
