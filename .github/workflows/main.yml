@@ -36,7 +36,7 @@ jobs:
         uses: urlstechie/urlchecker-action@master
         with:
           file_types: .md
-          print_all: false
+          print_all: true
           timeout: 10
           retry_count: 3
 
@@ -66,6 +66,9 @@ jobs:
 
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
+
+      - name: Check Cypress Cache list
+        run: yarn cypress cache list
 
       - name: Create Matrix Examples ⚡
         id: matrix
