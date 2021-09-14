@@ -1050,17 +1050,17 @@ global-dirs@^3.0.0:
   dependencies:
     ini "2.0.0"
 
-gmail-tester@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/gmail-tester/-/gmail-tester-1.3.2.tgz#c5b8f66b0e62f6e663f2aacf036bbc9c6894c8e3"
-  integrity sha512-+F79tArP87v3K3Sd00F1mmiwKbTKcJ7vygHTGCXtA/YUmlG7KUj6Rje9FINH2Nm6qbuDyTp1rv6V43/3ZP0rFw==
+gmail-tester@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/gmail-tester/-/gmail-tester-1.3.3.tgz#97fed0851e722b85c23f8cc823a091d426ee02a0"
+  integrity sha512-YSR64NWfNmEzpgnE+QHQb1aO87uboDAuSrf6SdtFLAlS2Hb1aQdGs4IIMR6HqtnCm57Bw0HbtUfDzv6sUwFGoA==
   dependencies:
-    googleapis "^66.0.0"
+    googleapis "^85.0.0"
 
-google-auth-library@^6.0.0:
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-6.1.6.tgz#deacdcdb883d9ed6bac78bb5d79a078877fdf572"
-  integrity sha512-Q+ZjUEvLQj/lrVHF/IQwRo6p3s8Nc44Zk/DALsN+ac3T4HY/g/3rrufkgtl+nZ1TW7DNAw5cTChdVp4apUXVgQ==
+google-auth-library@^7.0.2:
+  version "7.9.1"
+  resolved "https://registry.yarnpkg.com/google-auth-library/-/google-auth-library-7.9.1.tgz#b90a3a0fa67d6ba78c43ffdeeb0a66fcebe6fb91"
+  integrity sha512-cWGykH2WBR+UuYPGRnGVZ6Cjq2ftQiEIFjQWNIRIauZH7hUWoYTr/lkKUqLTYt5dex77nlWWVQ8aPV80mhfp5w==
   dependencies:
     arrify "^2.0.0"
     base64-js "^1.3.0"
@@ -1079,25 +1079,25 @@ google-p12-pem@^3.0.3:
   dependencies:
     node-forge "^0.10.0"
 
-googleapis-common@^4.4.1:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/googleapis-common/-/googleapis-common-4.4.3.tgz#a2063adf17b14501a5f426b9cb0685496d835b7d"
-  integrity sha512-W46WKCk3QtlCCfmZyQIH5zxmDOyeV5Qj+qs7nr2ox08eRkEJMWp6iwv542R/PsokXaGUSrmif4vCC4+rGzRSsQ==
+googleapis-common@^5.0.2:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/googleapis-common/-/googleapis-common-5.0.5.tgz#4c7160be1ed7e4cc8cdbcdb6eac8a4b3a61dd782"
+  integrity sha512-o2dgoW4x4fLIAN+IVAOccz3mEH8Lj1LP9c9BSSvkNJEn+U7UZh0WSr4fdH08x5VH7+sstIpd1lOYFZD0g7j4pw==
   dependencies:
     extend "^3.0.2"
     gaxios "^4.0.0"
-    google-auth-library "^6.0.0"
+    google-auth-library "^7.0.2"
     qs "^6.7.0"
     url-template "^2.0.8"
     uuid "^8.0.0"
 
-googleapis@^66.0.0:
-  version "66.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-66.0.0.tgz#008062d06b13954bd3a0425c17e8f8396e884957"
-  integrity sha512-jdEleRoyo/AeJZjKGC7Z2mHgochn2vR2JKqey6kydRkIBmCZxoQKLisRR4H8CRYZeEd6+c8Ns/LzS1S7qUjoFw==
+googleapis@^85.0.0:
+  version "85.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-85.0.0.tgz#a23198e9e4ba75c7ed3168341b972c4d40d74a9c"
+  integrity sha512-9zFsCbxz/642PROcYJsg/CCm89U1qe15c0Wtv7bmZ8cWYLD1Jszc5z+xTNoXZxnomLbvQaHeKBCPh7RdAccYOA==
   dependencies:
-    google-auth-library "^6.0.0"
-    googleapis-common "^4.4.1"
+    google-auth-library "^7.0.2"
+    googleapis-common "^5.0.2"
 
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.6"
