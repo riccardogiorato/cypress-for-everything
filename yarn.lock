@@ -1356,10 +1356,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-junit-report-merger@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/junit-report-merger/-/junit-report-merger-3.0.1.tgz#3f6714da4b728b2a3201578b9958a7fb08f0390d"
-  integrity sha512-nOsD9NrdnWa+4/DkrqbP/xtai8KXJygaod9LcT27ogYoxUFCY3hin5sN2HHdqay/7McdL8fkcN4DnHhYgF/Plw==
+junit-report-merger@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/junit-report-merger/-/junit-report-merger-3.0.2.tgz#423977b7b76efb9839f105825cc85f99349dd47d"
+  integrity sha512-Hdi3Pu0N+Exm4Ss/lQJwscq1MIdAzsFZ3qc0//6Lwspw7rjdRTcs3OHJasJvYPuKsPofHckteOWY7r5g8268DA==
   dependencies:
     fast-glob "3.2.7"
     xmlbuilder2 "3.0.2"
