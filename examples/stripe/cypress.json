@@ -1,6 +1,5 @@
 {
   "fixturesFolder": false,
-  "supportFile": false,
   "pluginsFile": false,
   "reporter": "junit",
   "reporterOptions": {
@@ -12,5 +11,5 @@
     "openMode": 0
   },
   "screenshotOnRunFailure ": false,
-  "experimentalStudio": true
+  "chromeWebSecurity": false
 }

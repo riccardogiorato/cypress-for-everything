@@ -602,6 +602,11 @@ cypress-mailslurp@^1.1.0:
     isomorphic-fetch "^3.0.0"
     mailslurp-client "^12.0.0"
 
+cypress-plugin-stripe-elements@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cypress-plugin-stripe-elements/-/cypress-plugin-stripe-elements-1.0.2.tgz#b298d5da820228aafebfa8d3376993ac65f02f71"
+  integrity sha512-tNXZ9BHooO8IGGmOpVRhNfGde/vmPY4D56pi4VHw1EWbfSuwCoveeqqjKDeRfPzMTD5gGYGwXdX2qO1S9O9GEg==
+
 cypress@^8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-8.4.0.tgz#09ec06a73f1cb10121c103cba15076e659e24876"
