@@ -1,5 +1,5 @@
 {
-  "name": "http-response-status",
+  "name": "stripe",
   "private": true,
   "version": "0.0.0",
   "scripts": {
