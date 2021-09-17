@@ -1,0 +1,7 @@
+tasks:
+  - init: yarn install
+    command: yarn build
+
+github:
+  prebuilds:
+    addComment: true
