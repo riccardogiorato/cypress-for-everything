@@ -15,5 +15,4 @@ yarn add cypress-mailslurp
 1. Create the Cypress Support file with this code:
 - [cypress/support/index.js](cypress/support/index.js)
 
-ERROR TEST
-3. Write some tests to test out the plugin: [tesla-updates.ts](/cypress/integration/tesla-updates.ts)
+1. Write some tests to test out the plugin: [tesla-updates.ts](/cypress/integration/tesla-updates.ts)
