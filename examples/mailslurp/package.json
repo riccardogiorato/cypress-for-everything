@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "doppler run -- cypress open",
-    "test": "cypress run"
+    "test": "echo 'fix mailslurp api key'",
+    "testt": "cypress run"
   },
   "dependencies": {
     "cypress": "^8.3.1",
