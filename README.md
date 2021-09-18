@@ -1,14 +1,26 @@
 
 ![Cypress to test everything!](/assets/cover-repo.jpg)
 
+<p align="center">
+   <br/>
+<h3 align="center">Do all kind of tests ranging from Http Redirects, Seo, Logins, Emails and much more!</h3>
+</p>
+   <p align="center" style="align: center;">
+      <a href="https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml">
+        <img src="https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml/badge.svg?branch=main&event=push" alt="ci" />
+      </a>
+      <a href="https://gitpod.io/#https://github.com/riccardogiorato/cypress-for-everything">
+        <img src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod" alt="ready to code on gitpod"/>
+      </a>
+      <a href="https://github.com/riccardogiorato/cypress-for-everything/stargazers">
+        <img src="https://img.shields.io/github/stars/riccardogiorato/cypress-for-everything" alt="Github Stars" />
+      </a>
+   </p>
 
-### Do all kind of tests ranging from Http Redirects, Seo, Logins, Emails and much more!
 
+## Getting Started
 
-[Check out the latest run of the Cypress E2E tests!](https://github.com/riccardogiorato/cypress-for-everything/actions)
-
-[![CI](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml/badge.svg?branch=main&event=push)](https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml)
-
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/riccardogiorato/cypress-for-everything])
 
 ## Examples
 
@@ -25,3 +37,10 @@ You can find all the examples list inside the "examples" folder here:
 - [examples/tesla](examples/tesla): I really live Tesla so I will test various parts of their website to make sure they are working as expected.
 - [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implment their search funcionalities and we will test them.
 
+## Contributing
+
+We're open to all community contributions!
+
+## License
+
+MIT
