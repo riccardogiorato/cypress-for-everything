@@ -37,6 +37,33 @@ You can find all the examples list inside the "examples" folder here:
 - [examples/tesla](examples/tesla): I really live Tesla so I will test various parts of their website to make sure they are working as expected.
 - [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implment their search funcionalities and we will test them.
 
+### Support and Sponsors
+
+We're happy to announce we are starting to get ufficial support from a few partner and companies to support this public project!
+
+<!--sponsors start-->
+<table>
+    <tbody>
+        <tr>
+            <td align="center" valign="top">
+                <a href="https://www.mailslurp.com/" target="_blank">
+                    <img width="128px" src="https://avatars.githubusercontent.com/u/47079142?s=200&v=4" alt="MailSlurp Logo" />
+                <br />
+                <div>MailSlurp</div>
+                </a>
+                <br />
+                <sub>
+                    🥉 Team Sponsor <br />
+                    ☁️ Starter Account to build more email test!
+                </sub>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+
+<!--sponsors end-->
+
 ## Contributing
 
 We're open to all community contributions!

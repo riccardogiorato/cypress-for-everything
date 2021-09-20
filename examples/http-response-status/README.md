@@ -1,7 +1,7 @@
 # http-response-status
 
 ## Examples
-You can see all kind of examples of Http tests with different Status codes here: [tesla-http.ts](/cypress/integration/tesla-http.ts)
+You can see all kind of examples of Http tests with different Status codes here: [tesla-http.ts](/cypress/integration/tesla-http.ts) ✨
 
 
 ## How does it work? 

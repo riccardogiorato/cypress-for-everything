@@ -16,3 +16,18 @@ yarn add cypress-mailslurp
 - [cypress/support/index.js](cypress/support/index.js)
 
 3. Write some tests to test out the plugin: [tesla-updates.ts](/cypress/integration/tesla-updates.ts)
+
+### Support and Sponsors
+
+<div align="center" valign="top">
+    <a href="https://www.mailslurp.com/" target="_blank">
+        <img width="128px" src="https://avatars.githubusercontent.com/u/47079142?s=200&v=4" alt="MailSlurp Logo" />
+        <br />
+        <div>MailSlurp</div>
+    </a>
+    <br />
+    <sub>
+        🥉 Team Sponsor <br />
+        ☁️ Starter Account to build more email test!
+    </sub>
+</div>

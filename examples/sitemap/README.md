@@ -32,8 +32,8 @@ Getting the array of all the Urls from the sitemap.xml file and parsing it to ge
 
 Now you will need to scan the entire list of links and check if they are valid! We prepared two possibilities to do it: 
 
-- [Fast Check](cypress/integration/sitemap-fast.ts): check the sitemap fast, checks only 200 response to page urls from the server.
-- [Slow Check](cypress/integration/sitemap-slow.ts): check the complete page fully loaded waiting for javascript to load.
+- [Fast Check](cypress/integration/sitemap-fast.ts): check the sitemap fast, checks only 200 response to page urls from the server. ✨
+- [Slow Check](cypress/integration/sitemap-slow.ts): check the complete page fully loaded waiting for javascript to load. ✨
 
 ### Fast Check
 

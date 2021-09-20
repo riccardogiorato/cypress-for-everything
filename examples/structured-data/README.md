@@ -10,7 +10,7 @@ To make it possible I had to follow the following steps:
 3. Finally use the plugin to run this task and test out different pages.
 
 ## Examples
-- [Apple Store testing for Strucutred Data](cypress/integration/apple-store.ts)
+- [Apple Store testing for Strucutred Data](cypress/integration/apple-store.ts) ✨
 
 ## How does it work? 
 To solve the previous 3 steps we did the following:
@@ -19,7 +19,7 @@ To solve the previous 3 steps we did the following:
 yarn add structured-data-testing-tool
 ```
 2. Create the Cypress Plugin code, you can copy most of the code from the plugins folder here, especially these 2 files:
-- [cypress/plugins/structured-data-testing-tool/index.ts](cypress/plugins/structured-data-testing-tool/index.ts)
-- [cypress/plugins/index.ts](cypress/plugins/index.ts)
+- [cypress/plugins/structured-data-testing-tool/index.ts](cypress/plugins/structured-data-testing-tool/index.ts) ✨
+- [cypress/plugins/index.ts](cypress/plugins/index.ts) ✨
 
-3. Write some tests to test out the plugin: [apple-store](cypress/integration/apple-store.ts)
+3. Write some tests to test out the plugin: [apple-store](cypress/integration/apple-store.ts) ✨

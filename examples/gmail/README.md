@@ -6,7 +6,7 @@ If you are looking to test out emails with cypress:
 You just found the solution to this problem!
 
 ## Examples
-- [slack-new-account.ts](cypress/integration/slack-new-account.ts)
+- [slack-new-account.ts](cypress/integration/slack-new-account.ts) ✨
 
 ## How does it work? 
 
@@ -31,4 +31,4 @@ yarn add gmail-tester
 - [cypress/plugins/refreshGmailToken.ts](cypress/plugins/refreshGmailToken.ts)
 - [cypress/plugins/index.ts](cypress/plugins/index.ts)
 
-4. Write a simple test to check if the plugin is working: [slack-new-account.ts](cypress/integration/slack-new-account.ts)
+4. Write a simple test to check if the plugin is working: [slack-new-account.ts](cypress/integration/slack-new-account.ts) ✨

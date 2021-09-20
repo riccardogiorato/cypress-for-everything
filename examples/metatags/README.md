@@ -4,13 +4,13 @@ Checkin metatags is really simple with cypress!
 
 ## Examples 
 
-- [Primary Metatags](cypress/integration/metatags-primary.ts): check title and metatags for title and description
-- [Open Graph Metatags](cypress/integration/metatags-opengraph-og.ts): check og or opengraph metatags
-- [Twitter Metatags](cypress/integration/metatags-twitter.ts): check twitter metatags for twitter card previews
+- [Primary Metatags](cypress/integration/metatags-primary.ts): check title and metatags for title and description ✨
+- [Open Graph Metatags](cypress/integration/metatags-opengraph-og.ts): check og or opengraph metatags ✨
+- [Twitter Metatags](cypress/integration/metatags-twitter.ts): check twitter metatags for twitter card previews ✨
 
 ## [Primary Metatags](cypress/integration/metatags-primary.ts)
 
-You can find the complete file here: [metatags-primary.ts](cypress/integration/metatags-primary.ts)
+You can find the complete file here: [metatags-primary.ts](cypress/integration/metatags-primary.ts) ✨
 
 ### Testing Page Title
 ```typescript
@@ -33,7 +33,7 @@ You can find the complete file here: [metatags-primary.ts](cypress/integration/m
 
 ## Open Graph Metatags
 
-You can find the complete file here: [metatags-opengraph-og.ts](cypress/integration/metatags-opengraph-og.ts)
+You can find the complete file here: [metatags-opengraph-og.ts](cypress/integration/metatags-opengraph-og.ts) ✨
 
 ### Testing Open Graph og:site_name
 ```typescript
@@ -49,7 +49,7 @@ You can find the complete file here: [metatags-opengraph-og.ts](cypress/integrat
 
 ## Twitter Metatags
 
-You can find the complete file here: [metatags-twitter.ts](cypress/integration/metatags-twitter.ts)
+You can find the complete file here: [metatags-twitter.ts](cypress/integration/metatags-twitter.ts) ✨
 
 ### Testing Twitter metatag like twitter:creator
 ```typescript

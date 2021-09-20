@@ -4,9 +4,9 @@ Url query parameters are the base of the dynamic web and they are used by all th
 
 
 ## Examples 
-- [search-bing.ts](cypress/integration/search-bing.ts): searching in bing, we also check for a cookie banner to hide it.
-- [search-bing.ts](cypress/integration/search-brave.ts): searching in brave search beta
-- [search-duckduckgo.ts](cypress/integration/search-duckduckgo.ts): searching in duckduckgo
+- [search-bing.ts](cypress/integration/search-bing.ts): searching in bing, we also check for a cookie banner to hide it. ✨
+- [search-bing.ts](cypress/integration/search-brave.ts): searching in brave search beta ✨
+- [search-duckduckgo.ts](cypress/integration/search-duckduckgo.ts): searching in duckduckgo ✨
 
 
 ## How does it work? 

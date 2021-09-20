@@ -1,7 +1,7 @@
 # form-inputs
 
 ## Examples
-- [tesla-inputs.ts](cypress/integration/tesla-inputs.ts)
+- [tesla-inputs.ts](cypress/integration/tesla-inputs.ts) ✨
 
 ## How does it work? 
 
