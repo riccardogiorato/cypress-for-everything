@@ -47,14 +47,14 @@ We're happy to announce we are starting to get ufficial support from a few partn
         <tr>
             <td align="center" valign="top">
                 <a href="https://www.mailslurp.com/" target="_blank">
-                    <img width="128px" src="https://avatars.githubusercontent.com/u/47079142?s=200&v=4" alt="MailSlurp Logo" />
+                    <img width="128px" src="/assets/mailslurp.png" alt="MailSlurp Logo" />
                 <br />
                 <div>MailSlurp</div>
                 </a>
                 <br />
                 <sub>
-                    🥉 Team Sponsor <br />
-                    ☁️ Starter Account to build more email test!
+                    🥉 Supporter <br />
+                    ☁️ Starter Account to let us build more tests!
                 </sub>
             </td>
         </tr>
