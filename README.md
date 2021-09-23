@@ -2,7 +2,6 @@
 ![Cypress to test everything!](/assets/cover-repo.jpg)
 
 <p align="center">
-   <br/>
 <h3 align="center">Do all kind of tests ranging from Http Redirects, Seo, Logins, Emails and much more!</h3>
 </p>
    <p align="center" style="align: center;">
