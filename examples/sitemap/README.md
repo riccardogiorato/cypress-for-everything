@@ -4,6 +4,8 @@ To test a sitemap usually you need 2 steps:
 1. Reading the sitemap.xml 
 2. Check the Urls
 
+> Written Tutorial on Medium: https://javascript.plainenglish.io/how-to-test-a-sitemap-with-cypress-31b99cccd600
+
 ## Reading the sitemap.xml 
 
 Getting the array of all the Urls from the sitemap.xml file and parsing it to get all the complete links!
