@@ -1,8 +1,11 @@
 # http-response-status
 
+## Written Tutorial
+
+https://www.riccardogiorato.com/blog/a/cypress-http-response
+
 ## Examples
 You can see all kind of examples of Http tests with different Status codes here: [tesla-http.ts](/cypress/integration/tesla-http.ts) ✨
-
 
 ## How does it work? 
 
