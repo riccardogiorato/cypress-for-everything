@@ -1,0 +1,13 @@
+{
+  "name": "mailosaur",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cypress open",
+    "test": "cypress run"
+  },
+  "dependencies": {
+    "cypress": "^8.5.0",
+    "cypress-mailosaur": "^2.3.3"
+  }
+}
