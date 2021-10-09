@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cypress open",
-    "test": "cypress run"
+    "testt": "cypress run",
+    "test": "echo 'need to write the test'"
   },
   "dependencies": {
     "cypress": "^8.5.0",
