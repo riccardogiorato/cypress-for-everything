@@ -3,9 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "cypress open",
-    "testt": "cypress run",
-    "test": "echo 'need to write the test'"
+    "dev": "doppler run -- cypress open",
+    "test": "cypress run"
   },
   "dependencies": {
     "cypress": "^8.5.0",

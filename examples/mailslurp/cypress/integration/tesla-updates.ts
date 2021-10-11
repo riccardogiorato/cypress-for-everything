@@ -21,9 +21,11 @@ describe("Tesla Enagage Email Registration", async function () {
 
     cy.contains("Get Updates");
 
-    cy.get('body input[id="ember234-email-form"]').type(this.emailAddress);
+    cy.get(".ctaContainer").within(() => {
+      cy.get("input").type(this.emailAddress);
+    });
 
-    cy.get('div[id="ember234"] button').click();
+    cy.get(".cta").click();
   });
 
   it("Enagage Form: Email is delievered", function () {
