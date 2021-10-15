@@ -110,3 +110,5 @@ report.xml
 # Ignore Cypress Temp files from examples
 examples/*/cypress/videos/*.*
 examples/*/cypress/screenshots/*.*
+
+.DS_Store
