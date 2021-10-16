@@ -1,6 +1,6 @@
 describe("Tesla Newsletter Form Inputs", async function () {
-  const test_id = new Date().getTime();
-  const fake_email = `fake.email.cypress4everything+${test_id}@gmail.com`;
+  const testId = new Date().getTime();
+  const fake_email = `fake.email.cypress4everything+${testId}@gmail.com`;
 
   it("Newsletter Form: Email is submitted from UI to server!", function () {
     cy.visit("https://www.tesla.com/updates");
@@ -11,12 +11,12 @@ describe("Tesla Newsletter Form Inputs", async function () {
 
     cy.contains("Stay Connected");
 
-    cy.get('body input[name="/firstName"]').type(`name ${test_id}`);
-    cy.get('body input[name="/lastName"]').type(`name ${test_id}`);
+    cy.get('body input[name="/firstName"]').type(`name ${testId}`);
+    cy.get('body input[name="/lastName"]').type(`name ${testId}`);
 
     cy.get('body input[name="/email"]').type(fake_email);
 
-    cy.get('body input[name="/zip"]').type(test_id.toString());
+    cy.get('body input[name="/zip"]').type(testId.toString());
 
     cy.get("fieldset input[id='/productInterested_Model S']").click();
     cy.get("fieldset input[id='/productInterested_Model 3']").click();

@@ -26,15 +26,11 @@ describe("Discord New Account Email", async function () {
 
     cy.get('body input[name="password"]').type(`${test_id}-${test_id}`);
 
-    cy.get('body input[type="checkbox"]').first().click();
-
     cy.get("body input[aria-label='Month']").click({ force: true });
     cy.get("#react-select-2-option-0").click();
     cy.get("body input[aria-label='Day']").click({ force: true });
     cy.get("#react-select-3-option-0").click();
     cy.get("body input[aria-label='Year']").click({ force: true });
     cy.get("#react-select-4-option-0").click();
-
-    cy.get("body button[type='submit']").click();
   });
 });

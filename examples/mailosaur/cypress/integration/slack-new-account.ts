@@ -1,15 +1,13 @@
 /// <reference types="cypress-mailosaur" />
 
-import cypress = require("cypress");
-
 describe("Slack New Account Email", async function () {
   Cypress.on("uncaught:exception", () => {
     return false;
   });
 
-  const test_id = new Date().getTime();
+  const testId = new Date().getTime();
   const serverId = "gr3rfyat"; // Replace this ID with your actual Mailosaur Server ID
-  const testEmail = `slack-new-account${test_id}@${serverId}.mailosaur.net`;
+  const testEmail = `slack-new-account${testId}@${serverId}.mailosaur.net`;
 
   it("Slack Create New Account: Email is submitted from UI to server!", function () {
     cy.visit("https://slack.com/intl/en-en/get-started#/createnew");
