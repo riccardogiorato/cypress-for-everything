@@ -599,13 +599,13 @@ cypress-mailosaur@^2.3.3:
   resolved "https://registry.yarnpkg.com/cypress-mailosaur/-/cypress-mailosaur-2.3.3.tgz#f7d40905e29f042416e3f504e449b8a320405018"
   integrity sha512-Xo3NqXm0kxdozwAdpCgv2bRLgZyMuGaQS7CK7+e8oFQWFaG/e+zamg8KSbi/n2ROSjm5CXh0WFNMHgBYZ8wZjg==
 
-cypress-mailslurp@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/cypress-mailslurp/-/cypress-mailslurp-1.1.0.tgz#d971cbdb71c219a5ed7271b1557a6b04795f5241"
-  integrity sha512-B7pK0xzk5DBvZdgZI+QxBoLkTPcrD1KDOo0aFwL0KNQvQZSVG08FZyTpfdmUWNdViEW2Ekh3dTTWm0BpbHk1ag==
+cypress-mailslurp@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/cypress-mailslurp/-/cypress-mailslurp-1.3.0.tgz#35c8e0ffe373a583a78a0d0d9cb30b998b5af19f"
+  integrity sha512-Dm9rKq4CUyzU4mg9lr6aLfxhMTbWnm7cYkYrlzBc+bIbIszIqo2nQGE0d4Xg0uRV9UzQaV0U8SNLYQ2F7bnhtg==
   dependencies:
     isomorphic-fetch "^3.0.0"
-    mailslurp-client "^12.0.0"
+    mailslurp-client "^15.0.1"
 
 cypress-plugin-stripe-elements@^1.0.2:
   version "1.0.2"
@@ -1513,10 +1513,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-mailslurp-client@^12.0.0:
-  version "12.4.6"
-  resolved "https://registry.yarnpkg.com/mailslurp-client/-/mailslurp-client-12.4.6.tgz#57ac42e2b4f1a0c9e5bf04dc96b541cb7262be8a"
-  integrity sha512-6ED63R7+vggMwm8xUhw5Zy2QYV0TWwo1g8vnpJnKUzJlgJt5gAST0UKK6iEAf7VVcMP8GOph+XJcW/5YLzaK0Q==
+mailslurp-client@^15.0.1:
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/mailslurp-client/-/mailslurp-client-15.0.1.tgz#10d220ac5da89ca275ae9035d84eb348455238b4"
+  integrity sha512-fHBoOd/l7f27aR/GRHa/5s0NDp7dieg3zwKy82RU80ADtYT9OEtGAf4aCeVKFeEyopQKH6J5ED/TrDvOUL1+qA==
   dependencies:
     es6-promise "^4.2.8"
     isomorphic-fetch "^3.0.0"
