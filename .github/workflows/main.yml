@@ -58,7 +58,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
-      - uses: Install dependencies 🔧
+      - name: Install dependencies 🔧
+        uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.19.0
           run_install: true
