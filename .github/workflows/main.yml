@@ -133,6 +133,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      - name: Install pnpm 🔧
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{env.PNPM_VER}}
+
       - name: Install only packages needed for core
         run: pnpm add -W ts-node
 
