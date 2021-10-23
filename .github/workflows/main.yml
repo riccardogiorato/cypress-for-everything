@@ -61,9 +61,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{env.CYPRESS_CACHE_FOLDER}}
-          key: ${{ runner.os }}-cypress-${{env.CACHE_VER}}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-cypress-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cypress-${{env.CACHE_VER}}-
+            ${{ runner.os }}-cypress-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies 🔧
         run: yarn install --frozen-lockfile --prefer-offline
