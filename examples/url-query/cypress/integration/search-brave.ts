@@ -4,7 +4,13 @@ describe("'Brave Search' Search with Url Search parameters", () => {
   });
 
   it("should display different url query parameters", () => {
-    cy.visit("https://search.brave.com/");
+    cy.visit("https://search.brave.com/", {
+      headers: {
+        "Content-Type": "text/xml; charset=utf-8",
+        "user-agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36",
+      },
+    });
     const searchedText = "testing brave new search engine";
 
     cy.get("#searchbox").type(searchedText);
