@@ -19,6 +19,7 @@ env:
   CYPRESS_MAILOSAUR_API_KEY: ${{ secrets.CYPRESS_MAILOSAUR_API_KEY }}
   CYPRESS_MAILSLURP_API_KEY: ${{ secrets.CYPRESS_MAILSLURP_API_KEY }}
   CACHE_VER: v01
+  PNPM_VER: 6.19.0
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -61,7 +62,7 @@ jobs:
       - name: Install dependencies 🔧
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.19.0
+          version: ${{env.PNPM_VER}}
           run_install: true
 
       - name: Check Cypress Cache list
@@ -88,21 +89,17 @@ jobs:
       matrix:
         example: ${{fromJson(needs.build.outputs.matrix)}}
     steps:
+      - name: Install pnpm 🔧
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{env.PNPM_VER}}
+
       - name: Restore Cache 💾
         uses: actions/cache@v2
         id: restore-build
         with:
           path: ./*
           key: ${{ github.sha }}
-
-      - name: Restore Cache Cypress 💾
-        id: cypress-cache
-        uses: actions/cache@v2
-        with:
-          path: ${{env.CYPRESS_CACHE_FOLDER}}
-          key: ${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Test 🏗️
         id: cypress-test
