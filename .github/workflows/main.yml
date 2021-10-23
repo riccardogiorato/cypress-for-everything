@@ -98,11 +98,6 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-      - name: Check for Broken Links 🔎
-        uses: paramt/url-checker@master
-        with:
-          files: "examples/${{ matrix.example }}/README.md"
-
       - name: Test 🏗️
         id: cypress-test
         run: |
