@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "merge": "yarn ts-node ./scripts/merge-cypress-xml.ts",
+    "preinstall": "npx only-allow pnpm",
+    "merge": "pnpm ts-node ./scripts/merge-cypress-xml.ts",
     "upgradeAll": "yarn upgrade-interactive --latest"
   },
   "devDependencies": {
@@ -19,9 +20,8 @@
     "junit-report-merger": "^3.0.2",
     "xml-js": "^1.6.11"
   },
-  "workspaces": {
-    "packages": [
-      "examples/*"
-    ]
+  "engines": {
+    "node": ">=12.17.0",
+    "pnpm": ">=6.19.0"
   }
 }
