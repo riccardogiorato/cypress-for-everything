@@ -34,11 +34,6 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Check for Broken Links 🔎
-        uses: paramt/url-checker@master
-        with:
-          files: "README.md"
-
       - name: Cache .pnpm-store  💾
         uses: actions/cache@v2
         with:

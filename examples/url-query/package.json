@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cypress open",
-    "test": "cypress run --browser chrome"
+    "test": "cypress run"
   },
   "dependencies": {
     "cypress": "^8.6.0"
