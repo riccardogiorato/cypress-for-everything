@@ -6,7 +6,6 @@ describe("DuckdDuckGo Search with Url Search parameters", () => {
     cy.get("#search_button_homepage").click();
 
     cy.url().should("include", "q=");
-    cy.url().should("include", "ia=web");
 
     cy.location().then((location) => {
       // here we can access the location searchParams directly with the URL constructor
