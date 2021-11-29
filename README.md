@@ -28,7 +28,8 @@ You can find all the examples list inside the "examples" folder here:
 - [examples/form-inputs](examples/form-inputs): testing out different types of forms and inputs.
 - [examples/gmail](examples/gmail): testing email workflows with a free gmail accounts or with paid gsuite accounts from UI submission to email delivery.
 - [examples/http-response-status](examples/http-response-status): testing different http response status codes like 200/300/404 and also various redirects 301!
-- [examples/mailslurp](examples/mailslurp): testing email workflows with "mailslurp" an email service to create email inboxes for testing all from their Cypress plugin.
+- [examples/mailosaur](examples/mailosaur): 🏆 The Best way to test Email user flows is possible with **"Mailosaur"**, an email service to create email inboxes to test anything, they also provide a great cypress plugin we will use!
+- [examples/mailslurp](examples/mailslurp): the best alternative to Mailosaur, comes to a second place just cause they are pricier and with less responsive support channels!
 - [examples/metatags](examples/metatags): all search engines and social networks love metatags and we will test them out to prevent and bug, ranging from twitter:tilte, moving to title and description and finally all open graph tags like og:title or og:url and more!
 - [examples/sitemap](examples/sitemap): we will prevent dead links and unwanted pages to appear from the sitemap.xml file by checking all of the sitemap links.
 - [examples/stripe](examples/stripe): Stripe is the most popular payment processing service in the world and we make some simple tests for you to get started!
