@@ -8,7 +8,7 @@
     "testt": "cypress run"
   },
   "dependencies": {
-    "cypress": "^8.6.0",
+    "cypress": "^9.1.0",
     "cypress-mailslurp": "^1.3.0"
   }
 }

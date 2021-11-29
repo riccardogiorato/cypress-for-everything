@@ -1,16 +1,31 @@
 # mailosaur
 
--
+Testing Emails with Mailosaur is super simple with their cypress plugin!
+Their pricing also offer a free version to get started with!
 
 ## Examples
 
--
+- [slack-new-account.ts](cypress/integration/slack-new-account.ts)
 
 ## How does it work?
 
-```typescript
+1. Install the package "cypress-mailosaur" with
 
 ```
+yarn add cypress-mailosaur
+```
+
+2. Create the Cypress Support file with this code:
+
+```
+require("cypress-mailosaur");
+```
+
+- [cypress/support/index.ts](cypress/support/index.ts)
+
+3. Write some tests to test out the plugin: [slack-new-account.ts](cypress/integration/slack-new-account.ts)
+
+**Remember to set the `CYPRESS_MAILOSAUR_API_KEY` environment variable to your Mailosaur API key.**
 
 ### Support and Sponsors
 

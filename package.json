@@ -7,14 +7,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "pnpm:install": "npx pnpm add -g pnpm",
     "preinstall": "npx only-allow pnpm",
     "merge": "pnpm ts-node ./scripts/merge-cypress-xml.ts",
-    "upgradeAll": "yarn upgrade-interactive --latest"
+    "upgradeAll": "pnpm up -L -i -r"
   },
   "devDependencies": {
-    "@types/node": "^15.14.0",
-    "ts-node": "^10.3.0",
-    "typescript": "^4.4.4"
+    "@types/node": "^16.11.10",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   },
   "dependencies": {
     "junit-report-merger": "^3.0.2",
