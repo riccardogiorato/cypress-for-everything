@@ -3,7 +3,7 @@ name: Main CI workflow
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" # every day at midnight run E2E tests
+    - cron: "0 0 * * MON,THU" # every MON,THU at midnight run E2E tests
   push:
     branches:
       - main
