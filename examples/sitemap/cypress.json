@@ -11,6 +11,6 @@
     "runMode": 2,
     "openMode": 0
   },
-  "screenshotOnRunFailure ": false,
+  "screenshotOnRunFailure": false,
   "experimentalStudio": true
 }

@@ -1,6 +1,6 @@
 {
   "fixturesFolder": false,
-  "supportFile": false,
+  "pluginsFile": false,
   "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "../../report/[hash].xml",
@@ -11,5 +11,6 @@
     "openMode": 0
   },
   "screenshotOnRunFailure": false,
-  "experimentalStudio": true
+  "experimentalStudio": true,
+  "chromeWebSecurity": false
 }

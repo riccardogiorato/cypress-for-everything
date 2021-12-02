@@ -10,7 +10,7 @@
     "runMode": 2,
     "openMode": 0
   },
-  "screenshotOnRunFailure ": false,
+  "screenshotOnRunFailure": false,
   "experimentalStudio": true,
   "defaultCommandTimeout": 30000,
   "responseTimeout": 30000,

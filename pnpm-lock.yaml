@@ -17,6 +17,12 @@ importers:
       ts-node: 10.4.0_36929cccfdb926da0bb85cc291f27124
       typescript: 4.5.2
 
+  examples/auth-google:
+    specifiers:
+      cypress: ^9.1.0
+    dependencies:
+      cypress: 9.1.0
+
   examples/form-inputs:
     specifiers:
       cypress: ^9.1.0
