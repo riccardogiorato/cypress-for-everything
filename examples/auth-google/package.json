@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "doppler run -- cypress open",
-    "test": "echo 'hello world!'",
-    "testt": "cypress run --browser chrome"
+    "test": "export HTTP_PROXY=$STATIC_IP_HTTP_PROXY cypress run --browser chrome"
   },
   "dependencies": {
     "cypress": "^9.1.0"
