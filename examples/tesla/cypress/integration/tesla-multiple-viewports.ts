@@ -28,11 +28,6 @@ describe("Tesla buying a Model 3", () => {
         cy.contains("Continue to payment").click({ force: true });
       });
 
-      cy.get("#payment-lease-panel-tab").click();
-      cy.get("#payment-loan-panel-tab").click();
-      cy.get("#payment-cash-panel-tab").click();
-      cy.get(".payment-options > .tds-btn").click();
-
       cy.contains("Order with Card");
     });
   });

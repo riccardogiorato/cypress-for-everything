@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "doppler run -- cypress open",
-    "test": "HTTP_PROXY=$(echo STATIC_IP_HTTP_PROXY) cypress run --browser chrome"
+    "test": "echo 'still working on auth google'",
+    "testt": "HTTP_PROXY=$(echo STATIC_IP_HTTP_PROXY) cypress run --browser chrome"
   },
   "dependencies": {
-    "cypress": "^9.1.0"
+    "cypress": "^9.1.1"
   }
 }
