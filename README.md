@@ -13,6 +13,9 @@
       <a href="https://github.com/riccardogiorato/cypress-for-everything/stargazers">
         <img src="https://img.shields.io/github/stars/riccardogiorato/cypress-for-everything" alt="Github Stars" />
       </a>
+       <a href="">
+        <img src="https://img.shields.io/twitter/follow/riccardogiorato?style=social" alt="Follow Riccardo on Twitter" />
+      </a>
    </p>
 
 ## Getting Started

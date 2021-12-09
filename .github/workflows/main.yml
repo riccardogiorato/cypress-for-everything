@@ -29,6 +29,7 @@ jobs:
   build:
     name: Install ⚙️ & Examples Matrix 🔧
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
@@ -76,6 +77,7 @@ jobs:
   examplesTest:
     name: Test Example
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: [build]
     strategy:
       fail-fast: false
@@ -120,6 +122,7 @@ jobs:
   examplesResults:
     name: Result Examples 📊
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     if: always()
     needs: [build, examplesTest]
     steps:
@@ -158,6 +161,7 @@ jobs:
   examplesClean:
     name: Clean Example
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     needs: [build, examplesResults]
     if: always()
     strategy:
