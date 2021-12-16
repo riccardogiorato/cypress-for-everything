@@ -13,7 +13,7 @@ describe("Tesla HTTP requests and redirects", () => {
     }).then((resp) => {
       // redirect status code is 301
       expect(resp.status).to.eq(301);
-      expect(resp.redirectedToUrl).to.eq(baseUrlTesla);
+      expect(resp.redirectedToUrl).to.eq(urlHttp);
     });
   });
 
