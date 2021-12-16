@@ -20,6 +20,7 @@ describe("Tesla HTTP requests and redirects", () => {
   const urlHttpWww = "http://www.tesla.com/";
   it(urlHttpWww + " end location", () => {
     cy.visit(urlHttpWww);
+    cy.wait(500);
     cy.url().should("eq", baseUrlTesla);
   });
   it(urlHttpWww + " redirect", () => {
