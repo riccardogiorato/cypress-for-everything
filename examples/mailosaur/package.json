@@ -7,7 +7,7 @@
     "test": "cypress run --browser chrome"
   },
   "dependencies": {
-    "cypress": "^9.1.1",
-    "cypress-mailosaur": "^2.5.6"
+    "cypress": "^9.2.0",
+    "cypress-mailosaur": "^2.6.0"
   }
 }

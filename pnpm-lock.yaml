@@ -7,99 +7,109 @@ importers:
       '@types/node': ^16.11.12
       junit-report-merger: ^3.0.2
       ts-node: ^10.4.0
-      typescript: ^4.5.2
+      typescript: ^4.5.4
       xml-js: ^1.6.11
     dependencies:
       junit-report-merger: 3.0.2
       xml-js: 1.6.11
     devDependencies:
       '@types/node': 16.11.12
-      ts-node: 10.4.0_d1ba71cee4528a43e185cc3d6fa907dc
-      typescript: 4.5.2
+      ts-node: 10.4.0_b6e8374966de429fb31cc39444331b2d
+      typescript: 4.5.4
+
+  examples/accessibility:
+    specifiers:
+      axe-core: ^4.3.5
+      cypress: ^9.2.0
+      cypress-axe: ^0.13.0
+    dependencies:
+      axe-core: 4.3.5
+      cypress: 9.2.0
+      cypress-axe: 0.13.0_axe-core@4.3.5+cypress@9.2.0
 
   examples/auth-google:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/form-inputs:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/gmail:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
       gmail-tester: ^1.3.4
       ts-node: ^10.4.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
       gmail-tester: 1.3.4
-      ts-node: 10.4.0_d1ba71cee4528a43e185cc3d6fa907dc
+      ts-node: 10.4.0_b6e8374966de429fb31cc39444331b2d
 
   examples/http-response-status:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/mailosaur:
     specifiers:
-      cypress: ^9.1.1
-      cypress-mailosaur: ^2.5.6
+      cypress: ^9.2.0
+      cypress-mailosaur: ^2.6.0
     dependencies:
-      cypress: 9.1.1
-      cypress-mailosaur: 2.5.6_cypress@9.1.1
+      cypress: 9.2.0
+      cypress-mailosaur: 2.6.0_cypress@9.2.0
 
   examples/mailslurp:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
       cypress-mailslurp: ^1.3.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
       cypress-mailslurp: 1.3.0
 
   examples/metatags:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/sitemap:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/stripe:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
       cypress-plugin-stripe-elements: ^1.0.2
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
       cypress-plugin-stripe-elements: 1.0.2
 
   examples/structured-data:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
       structured-data-testing-tool: ^4.5.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
       structured-data-testing-tool: 4.5.0
 
   examples/tesla:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
   examples/url-query:
     specifiers:
-      cypress: ^9.1.1
+      cypress: ^9.2.0
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
 
 packages:
 
@@ -206,8 +216,8 @@ packages:
   /@tsconfig/node16/1.0.2:
     resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==}
 
-  /@types/node/14.18.0:
-    resolution: {integrity: sha512-0GeIl2kmVMXEnx8tg1SlG6Gg8vkqirrW752KqolYo1PHevhhZN3bhJ67qHj+bQaINhX0Ra3TlWwRvMCd9iEfNQ==}
+  /@types/node/14.18.2:
+    resolution: {integrity: sha512-fqtSN5xn/bBzDxMT77C1rJg6CsH/R49E7qsGuvdPJa20HtV5zSTuLJPNfnlyVH3wauKnkHdLggTVkOW/xP9oQg==}
     dev: false
 
   /@types/node/16.11.12:
@@ -225,7 +235,7 @@ packages:
     resolution: {integrity: sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==}
     requiresBuild: true
     dependencies:
-      '@types/node': 14.18.0
+      '@types/node': 14.18.2
     dev: false
     optional: true
 
@@ -356,6 +366,11 @@ packages:
 
   /aws4/1.11.0:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
+    dev: false
+
+  /axe-core/4.3.5:
+    resolution: {integrity: sha512-WKTW1+xAzhMS5dJsxWkliixlO/PqC4VhmO9T4juNYcaTg9jzWiJsou6m5pxWYGfigWbwzJWeFY6z47a+4neRXA==}
+    engines: {node: '>=4'}
     dev: false
 
   /babel-polyfill/6.26.0:
@@ -632,13 +647,24 @@ packages:
     resolution: {integrity: sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==}
     dev: false
 
-  /cypress-mailosaur/2.5.6_cypress@9.1.1:
-    resolution: {integrity: sha512-PyuWZQpr+hOjxAu3V3iGQ+zNB7nEP3TCwetS7cnZyN7nOah8OwN3JNcI1POk5DRpNcFFxAzxUYV0ZrczhsO8mQ==}
+  /cypress-axe/0.13.0_axe-core@4.3.5+cypress@9.2.0:
+    resolution: {integrity: sha512-fCIy7RiDCm7t30U3C99gGwQrUO307EYE1QqXNaf9ToK4DVqW8y5on+0a/kUHMrHdlls2rENF6TN9ZPpPpwLrnw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      axe-core: ^3 || ^4
+      cypress: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
+    dependencies:
+      axe-core: 4.3.5
+      cypress: 9.2.0
+    dev: false
+
+  /cypress-mailosaur/2.6.0_cypress@9.2.0:
+    resolution: {integrity: sha512-hRmsfb2SuCbv8af5zvpkaLQgbZQ3jcBEuVTSGQi6szc3o2byhPhGLgjn7MZJaIb/U1dEsO5zLj8rXzSDLDQmQA==}
     engines: {node: '>= v10.0.0'}
     peerDependencies:
       cypress: '>= 2.1.0'
     dependencies:
-      cypress: 9.1.1
+      cypress: 9.2.0
     dev: false
 
   /cypress-mailslurp/1.3.0:
@@ -653,15 +679,15 @@ packages:
     resolution: {integrity: sha512-tNXZ9BHooO8IGGmOpVRhNfGde/vmPY4D56pi4VHw1EWbfSuwCoveeqqjKDeRfPzMTD5gGYGwXdX2qO1S9O9GEg==}
     dev: false
 
-  /cypress/9.1.1:
-    resolution: {integrity: sha512-yWcYD8SEQ8F3okFbRPqSDj5V0xhrZBT5QRIH+P1J2vYvtEmZ4KGciHE7LCcZZLILOrs7pg4WNCqkj/XRvReQlQ==}
+  /cypress/9.2.0:
+    resolution: {integrity: sha512-Jn26Tprhfzh/a66Sdj9SoaYlnNX6Mjfmj5PHu2a7l3YHXhrgmavM368wjCmgrxC6KHTOv9SpMQGhAJn+upDViA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@cypress/request': 2.88.10
       '@cypress/xvfb': 1.2.4
-      '@types/node': 14.18.0
+      '@types/node': 14.18.2
       '@types/sinonjs__fake-timers': 6.0.4
       '@types/sizzle': 2.3.3
       arch: 2.2.0
@@ -2019,7 +2045,7 @@ packages:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
     dev: false
 
-  /ts-node/10.4.0_d1ba71cee4528a43e185cc3d6fa907dc:
+  /ts-node/10.4.0_b6e8374966de429fb31cc39444331b2d:
     resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
@@ -2045,7 +2071,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.5.2
+      typescript: 4.5.4
       yn: 3.1.1
 
   /tslib/2.1.0:
@@ -2067,8 +2093,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /typescript/4.5.2:
-    resolution: {integrity: sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==}
+  /typescript/4.5.4:
+    resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

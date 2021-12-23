@@ -1,5 +1,5 @@
 {
-  "name": "sitemap",
+  "name": "accessibility",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -7,6 +7,8 @@
     "test": "cypress run --browser chrome"
   },
   "dependencies": {
-    "cypress": "^9.2.0"
+    "axe-core": "^4.3.5",
+    "cypress": "^9.2.0",
+    "cypress-axe": "^0.13.0"
   }
 }

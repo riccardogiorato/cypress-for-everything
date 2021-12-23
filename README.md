@@ -27,7 +27,7 @@
 You can find all the examples list inside the "examples" folder here:
 
 ### [examples/](examples/)
-
+- [examples/accessibility](examples/accessibility): testing for accessbility issues or A11Y with Axe.
 - [examples/form-inputs](examples/form-inputs): testing out different types of forms and inputs.
 - [examples/gmail](examples/gmail): testing email workflows with a free gmail accounts or with paid gsuite accounts from UI submission to email delivery.
 - [examples/http-response-status](examples/http-response-status): testing different http response status codes like 200/300/404 and also various redirects 301!
