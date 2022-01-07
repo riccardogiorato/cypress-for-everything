@@ -36,7 +36,16 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
+      - name: Cache all Repo for next jobs 💾
+        uses: actions/cache@v2
+        id: cache-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
       - name: Cache .pnpm-store  💾
+        if: steps.cache-build.outputs.cache-hit != 'true'
         uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
@@ -45,6 +54,7 @@ jobs:
             ${{ runner.os }}-pnpm-${{env.CACHE_VER}}-
 
       - name: Cache Cypress 💾
+        if: steps.cache-build.outputs.cache-hit != 'true'
         id: cypress-cache
         uses: actions/cache@v2
         with:
@@ -54,6 +64,7 @@ jobs:
             ${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install dependencies 🔧
+        if: steps.cache-build.outputs.cache-hit != 'true'
         uses: pnpm/action-setup@v2.0.1
         with:
           version: ${{env.PNPM_VER}}
@@ -65,14 +76,6 @@ jobs:
       - name: Create Matrix Examples ⚡
         id: matrix
         run: pnpm ts-node ./scripts/listExamples.ts
-
-      ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
-      - name: Cache all Repo for next jobs 💾
-        uses: actions/cache@v2
-        id: cache-build
-        with:
-          path: ./*
-          key: ${{ github.sha }}
 
   examplesTest:
     name: Test Example
