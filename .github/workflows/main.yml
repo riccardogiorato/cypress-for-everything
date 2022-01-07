@@ -36,6 +36,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      - name: Install pnpm 🔧
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{env.PNPM_VER}}
+
       ## from https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml#L28
       - name: Cache all Repo for next jobs 💾
         uses: actions/cache@v2
@@ -65,10 +70,8 @@ jobs:
 
       - name: Install dependencies 🔧
         if: steps.cache-build.outputs.cache-hit != 'true'
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: ${{env.PNPM_VER}}
-          run_install: true
+        run: |
+          pnpm install
 
       - name: Check Cypress Cache list
         run: cd examples/sitemap && pnpm cypress cache list
