@@ -8,21 +8,20 @@
   "private": true,
   "scripts": {
     "pnpm:install": "npx pnpm add -g pnpm",
-    "preinstall": "npx only-allow pnpm",
     "merge": "pnpm ts-node ./scripts/merge-cypress-xml.ts",
     "upgradeAll": "pnpm up -L -i -r"
   },
   "devDependencies": {
     "@types/node": "^16.11.12",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "dependencies": {
-    "junit-report-merger": "^3.0.2",
+    "junit-report-merger": "^3.0.5",
     "xml-js": "^1.6.11"
   },
   "engines": {
     "node": ">=12.17.0",
-    "pnpm": ">=6.19.0"
+    "pnpm": ">=6.29.1"
   }
 }

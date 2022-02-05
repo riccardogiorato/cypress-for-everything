@@ -12,5 +12,6 @@
     "openMode": 0
   },
   "screenshotOnRunFailure": false,
-  "experimentalStudio": true
+  "experimentalStudio": true,
+  "chromeWebSecurity": false
 }

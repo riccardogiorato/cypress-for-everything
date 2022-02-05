@@ -1,4 +1,8 @@
 describe("Stripe Checkout", () => {
+  Cypress.on("uncaught:exception", () => {
+    return false;
+  });
+
   it("Stripe Checkout test mode works!", () => {
     cy.request(
       "https://checkout.stripe.dev/api/demo-session?country=us&billingPeriod=monthly&hasBgColor=false&hasBillingAndShipping=false&hasCoupons=false&hasFreeTrial=false&hasShippingRate=false&hasTaxes=false&mode=payment&wallet=googlePay&hasPolicies=false&billingType=flat"

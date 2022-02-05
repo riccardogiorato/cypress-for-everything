@@ -20,7 +20,7 @@ env:
   CYPRESS_MAILSLURP_API_KEY: ${{ secrets.CYPRESS_MAILSLURP_API_KEY }}
   STATIC_IP_HTTP_PROXY: ${{ secrets.STATIC_IP_HTTP_PROXY }}
   CACHE_VER: v01
-  PNPM_VER: 6.19.0
+  PNPM_VER: 6.29.1
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

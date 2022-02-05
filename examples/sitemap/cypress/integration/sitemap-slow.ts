@@ -18,9 +18,19 @@ describe("Sitemap Slow Check", () => {
       });
   });
 
+  // this is needed cause sitemap urls have redirects to other domains
   it("should succesfully load each url in the sitemap", () => {
     urls.forEach((url) => {
-      cy.visit(url);
+      cy.window().then((win) => {
+        return win.open(url, "_self");
+      });
     });
   });
+
+  // this would work if the sitemap doesnt have any redirects to other domains
+  // it("should succesfully load each url in the sitemap", () => {
+  //   urls.forEach((url) => {
+  //     cy.visit(url);
+  //   });
+  // });
 });

@@ -9,9 +9,18 @@ describe("Tesla buying a Model 3", () => {
       cy.viewport(size as Cypress.ViewportPreset);
 
       cy.visit("https://www.tesla.com/model3");
-      cy.get(".tds-modal-actions > .tds-modal-close > .tds-icon").click({
-        force: true,
+
+      cy.get("body").then((body) => {
+        if (
+          body.find(".tds-modal-actions > .tds-modal-close > .tds-icon")
+            .length > 0
+        ) {
+          cy.get(".tds-modal-actions > .tds-modal-close > .tds-icon").click({
+            force: true,
+          });
+        }
       });
+
       cy.get("main").within(() => {
         cy.contains("Order Now").click({ force: true });
       });
@@ -20,12 +29,8 @@ describe("Tesla buying a Model 3", () => {
         cy.contains("Long Range").click({ force: true });
       });
 
-      cy.get('div [data-group-id="AUTOPILOT_PACKAGE"]').within(() => {
-        cy.contains("Add").click({ force: true });
-      });
-
-      cy.get('div [data-group-id="OPTIONS"]').within(() => {
-        cy.contains("Continue to payment").click({ force: true });
+      cy.get('div [data-subtype="btn-navigation--payment"]').click({
+        force: true,
       });
 
       cy.contains("Order with Card");

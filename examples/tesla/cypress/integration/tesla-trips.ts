@@ -6,7 +6,7 @@ describe("Tesla Trips", () => {
 
   it("tesla.com charging page should lead to trips", () => {
     cy.visit(baseUrlTesla + "charging");
-    cy.get(".header-lower").should("have.text", "Stay Charged");
+    cy.contains("Stay Charged");
     cy.get("body").type("{pagedown}");
     cy.contains("Plan My Trip").first().click({ force: true });
 
@@ -41,7 +41,7 @@ describe("Tesla Trips", () => {
 
     cy.get(".route__info > .copy").contains("Est. Gas Savings");
 
-    cy.get(".btn-primary").should("have.text", "Order Model S");
+    cy.get(".btn-primary").should("have.text", "Order Model 3");
   });
 
   it("tesla.com trips can visualize the superchargers list and total", () => {

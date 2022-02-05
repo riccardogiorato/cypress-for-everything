@@ -8,7 +8,7 @@
     "postsetup": "pnpm ts-node ./cypress/plugins/refreshGmailToken"
   },
   "dependencies": {
-    "cypress": "^9.2.0",
+    "cypress": "^9.4.1",
     "gmail-tester": "^1.3.4",
     "ts-node": "^10.4.0"
   }
