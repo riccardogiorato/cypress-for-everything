@@ -4,9 +4,8 @@ describe("Sitemap Fast Check", () => {
     cy.request({
       url: "https://www.vercel.com/sitemap.xml",
       headers: {
-        "Content-Type": "text/xml; charset=utf-8",
         "user-agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
       },
     })
       .as("sitemap")
