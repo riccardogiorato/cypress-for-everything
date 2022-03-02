@@ -34,7 +34,7 @@ jobs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install pnpm 🔧
         uses: pnpm/action-setup@v2.2.0
@@ -133,7 +133,7 @@ jobs:
     needs: [build, examplesTest]
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install pnpm 🔧
         uses: pnpm/action-setup@v2.2.0
