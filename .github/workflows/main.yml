@@ -110,7 +110,7 @@ jobs:
           pnpm test
 
       - name: Upload Video 📹
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: video from example ${{ matrix.example }}
@@ -118,7 +118,7 @@ jobs:
           retention-days: 10
 
       - name: Store Report XML Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: success()
         with:
           name: report-xml-${{ matrix.example }}
