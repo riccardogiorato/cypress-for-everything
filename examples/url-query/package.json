@@ -7,6 +7,6 @@
     "test": "cypress run"
   },
   "dependencies": {
-    "cypress": "^9.5.3"
+    "cypress": "^9.5.4"
   }
 }
