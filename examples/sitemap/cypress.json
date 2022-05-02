@@ -7,11 +7,9 @@
     "mochaFile": "../../report/[hash].xml",
     "toConsole": true
   },
-  "retries": {
-    "runMode": 2,
-    "openMode": 0
-  },
+  "retries": 2,
   "screenshotOnRunFailure": false,
   "experimentalStudio": true,
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "blockHosts": ["www.google-analytics.com", "cdn.segment.com", "sentry.io"]
 }

@@ -1,6 +1,6 @@
 describe("Sitemap Slow Check", () => {
-  let urls = [];
-  before(() => {
+  // this is needed cause sitemap urls have redirects to other domains
+  it("should succesfully load each url in the sitemap", () => {
     cy.request({
       url: "https://www.vercel.com/sitemap.xml",
       headers: {
@@ -11,20 +11,16 @@ describe("Sitemap Slow Check", () => {
     })
       .as("sitemap")
       .then((response) => {
-        urls = Cypress.$(response.body)
+        const urls = Cypress.$(response.body)
           .find("loc")
           .toArray()
           .map((el) => el.innerText);
+        urls.forEach((url) => {
+          cy.window().then((win) => {
+            return win.open(url, "_self");
+          });
+        });
       });
-  });
-
-  // this is needed cause sitemap urls have redirects to other domains
-  it("should succesfully load each url in the sitemap", () => {
-    urls.forEach((url) => {
-      cy.window().then((win) => {
-        return win.open(url, "_self");
-      });
-    });
   });
 
   // this would work if the sitemap doesnt have any redirects to other domains
