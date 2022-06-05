@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "cypress": "^9.6.0",
-    "cypress-mailosaur": "^2.7.0"
+    "cypress-mailosaur": "^2.8.0"
   }
 }
