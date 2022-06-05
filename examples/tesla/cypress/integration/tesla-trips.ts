@@ -39,9 +39,10 @@ describe("Tesla Trips", () => {
     cy.wait(["@getTrips"]);
     cy.wait(["@getTrips"]);
 
-    cy.get(".route__info > .copy").contains("Est. Gas Savings");
-
-    cy.get(".btn-primary").should("have.text", "Order Model 3");
+    cy.get(".route__cta--test-drive").should(
+      "have.text",
+      "Schedule a Test Drive"
+    );
   });
 
   it("tesla.com trips can visualize the superchargers list and total", () => {
