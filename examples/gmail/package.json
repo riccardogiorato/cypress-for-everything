@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "doppler run -- cypress open",
-    "test": "cypress run --browser chrome",
+    "test":"echo 'no ci test'",
+    "testt": "cypress run --browser chrome",
     "postsetup": "pnpm ts-node ./cypress/plugins/refreshGmailToken"
   },
   "dependencies": {
