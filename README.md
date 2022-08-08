@@ -24,25 +24,25 @@
 
 ## Examples
 
-You can find all the examples list inside the "examples" folder here:
+You can find all the examples listed inside the "examples" folder here:
 
 ### [examples/](examples/)
-- [examples/accessibility](examples/accessibility): testing for accessbility issues or A11Y with Axe.
+- [examples/accessibility](examples/accessibility): testing for accessibility issues or A11Y with Axe.
 - [examples/form-inputs](examples/form-inputs): testing out different types of forms and inputs.
-- [examples/gmail](examples/gmail): testing email workflows with a free gmail accounts or with paid gsuite accounts from UI submission to email delivery.
+- [examples/gmail](examples/gmail): testing email workflows with free Gmail accounts or with paid GSuite accounts from UI submission to email delivery.
 - [examples/http-response-status](examples/http-response-status): testing different http response status codes like 200/300/404 and also various redirects 301!
 - [examples/mailosaur](examples/mailosaur): 🏆 The Best way to test Email user flows is possible with **"Mailosaur"**, an email service to create email inboxes to test anything, they also provide a great cypress plugin we will use!
-- [examples/mailslurp](examples/mailslurp): the best alternative to Mailosaur, comes to a second place just cause they are pricier and with less responsive support channels!
+- [examples/mailslurp](examples/mailslurp): the best alternative to Mailosaur, comes a second place just cause they are pricier and with less responsive support channels!
 - [examples/metatags](examples/metatags): all search engines and social networks love metatags and we will test them out to prevent and bug, ranging from twitter:tilte, moving to title and description and finally all open graph tags like og:title or og:url and more!
 - [examples/sitemap](examples/sitemap): we will prevent dead links and unwanted pages to appear from the sitemap.xml file by checking all of the sitemap links.
 - [examples/stripe](examples/stripe): Stripe is the most popular payment processing service in the world and we make some simple tests for you to get started!
-- [examples/structured-data](examples/structured-data): Google loves Strucutred Data and we will test them without having to manually do this step by using a great NPM package called "structured-data-testing-tool".
+- [examples/structured-data](examples/structured-data): Google loves Structured Data and we will test them without having to manually do this step by using a great NPM package called "structured-data-testing-tool".
 - [examples/tesla](examples/tesla): I really live Tesla so I will test various parts of their website to make sure they are working as expected.
-- [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implment their search funcionalities and we will test them.
+- [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implement their search functionalities and we will test them.
 
 ### Support and Sponsors
 
-We're happy to announce we are starting to get ufficial support from a few partner and companies to support this public project!
+We're happy to announce we are starting to get official support from a few partners and companies to support this public project!
 
 <!--sponsors start-->
 <table>
