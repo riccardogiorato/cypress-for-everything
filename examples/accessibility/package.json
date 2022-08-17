@@ -7,8 +7,8 @@
     "test": "cypress run --browser chrome"
   },
   "dependencies": {
-    "axe-core": "^4.4.2",
-    "cypress": "^9.6.0",
-    "cypress-axe": "^0.14.0"
+    "axe-core": "^4.4.3",
+    "cypress": "^10.6.0",
+    "cypress-axe": "^1.0.0"
   }
 }
