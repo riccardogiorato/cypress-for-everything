@@ -1,6 +1,10 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  e2e: {
+    baseUrl: "https://checkout.stripe.dev",
+    supportFile: false,
+  },
   fixturesFolder: false,
   reporter: "junit",
   reporterOptions: {

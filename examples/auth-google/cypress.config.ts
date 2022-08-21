@@ -1,6 +1,9 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  e2e: {
+    baseUrl: "https://auth0.com",
+  },
   fixturesFolder: false,
   reporter: "junit",
   reporterOptions: {
