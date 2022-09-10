@@ -14,21 +14,9 @@ describe("Apple Structured Data", () => {
       expect(resultSD.passed[2].schema).to.equal("WebSite");
     });
   });
-  it("apple iphone 12 has BreadcrumbList and Product ", () => {
-    cy.visit("https://www.apple.com/shop/buy-iphone/iphone-12");
-    cy.task("structuredData", {
-      url: "https://www.apple.com/shop/buy-iphone/iphone-12",
-      schemas: ["BreadcrumbList", "Product"],
-    }).then((result) => {
-      const resultSD = result as StructuredDataResult;
-      expect(resultSD.passed.length).to.equal(2);
-      expect(resultSD.passed[0].schema).to.equal("BreadcrumbList");
-      expect(resultSD.passed[1].schema).to.equal("Product");
-    });
-  });
   it("apple iphone 12 shop page has BreadcrumbList, Product and FAQPage ", () => {
     cy.task("structuredData", {
-      url: "https://www.apple.com/us/shop/goto/buy_iphone/iphone_12",
+      url: "https://www.apple.com/shop/buy-iphone/iphone-12",
       schemas: ["BreadcrumbList", "Product", "FAQPage"],
     }).then((result) => {
       const resultSD = result as StructuredDataResult;
