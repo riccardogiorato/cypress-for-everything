@@ -4,7 +4,7 @@ Testing Emails with Mailslurp is super easy and can be done in seconds using the
 
 ## Examples
 
-- [tesla-updates.ts](cypress/integration/tesla-updates.ts)
+- [tesla-updates.cy.ts](./cypress/e2e/tesla-updates.cy.ts)
 
 ## How does it work?
 
@@ -16,11 +16,7 @@ To check email workflows with Mailslurp we will use their official cypress plugi
 yarn add cypress-mailslurp
 ```
 
-2. Create the Cypress Support file with this code:
-
-- [cypress/support/index.js](cypress/support/index.js)
-
-3. Write some tests to test out the plugin: [tesla-updates.ts](/cypress/integration/tesla-updates.ts)
+2. Write some tests to test out the plugin: [tesla-updates.cy.ts](./cypress/e2e/tesla-updates.cy.ts)
 
 ### Support and Sponsors
 

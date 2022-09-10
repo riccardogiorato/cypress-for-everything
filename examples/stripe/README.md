@@ -18,11 +18,13 @@ cy.get("#email").type("SatoshiNakamoto@email.com");
 cy.get("#cardNumber").type("4242424242424242");
 cy.get("#cardCvc").type("123");
 cy.get("#cardExpiry").type(
-"12" + (new Date().getFullYear() + 10).toString().substr(-2));
+  "12" + (new Date().getFullYear() + 10).toString().substr(-2)
+);
 ```
 
-You can find the complete example code here: 
-- [Stripe Checkout Cypress Example](cypress/integration/stripe-checkout.ts) ✨
+You can find the complete example code here:
+
+- [Stripe Checkout Cypress Example](./cypress/e2e/stripe-checkout.cy.ts) ✨
 
 ## Stripe Elements
 
@@ -36,26 +38,29 @@ Using this Plugin you will prevent yourself from writing a lot of code to intera
 yarn add cypress-plugin-stripe-elements
 ```
 
-2. Add the Plugin to your project's `cypress.json` file, you can find the file here: [cypress support index file](cypress/support/index.js)
+2. Import the plugin file in any of the tests where you need to test Stripe:
+
 ```javascript
-// cypress/support/index.js
 import "cypress-plugin-stripe-elements";
 ```
 
 3. Finally write some code to interact with Stripe Elements and the job is done!
+
 ```javascript
 cy.visit("https://stripe-payments-demo.appspot.com/");
 
 cy.get("#generate").click();
 
 cy.get("#card-element").within(() => {
-    cy.fillElementsInput("cardNumber", "4242424242424242");
-    cy.fillElementsInput("cardCvc", "123");
-    cy.fillElementsInput(
-        "cardExpiry",
-        "12" + (new Date().getFullYear() + 10).toString().substr(-2)
-    );
+  cy.fillElementsInput("cardNumber", "4242424242424242");
+  cy.fillElementsInput("cardCvc", "123");
+  cy.fillElementsInput(
+    "cardExpiry",
+    "12" + (new Date().getFullYear() + 10).toString().substr(-2)
+  );
 });
 ```
+
 You can find the complete example code here:
-- [Stripe Elements Cypress Example](cypress/integration/stripe-elements.ts) ✨
+
+- [Stripe Elements Cypress Example](./cypress/e2e/stripe-elements.cy.ts) ✨
