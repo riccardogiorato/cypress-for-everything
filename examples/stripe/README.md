@@ -24,7 +24,7 @@ cy.get("#cardExpiry").type(
 
 You can find the complete example code here:
 
-- [Stripe Checkout Cypress Example](cypress/integration/stripe-checkout.ts) ✨
+- [Stripe Checkout Cypress Example](./cypress/e2e/stripe-checkout.cy.ts) ✨
 
 ## Stripe Elements
 
@@ -38,10 +38,9 @@ Using this Plugin you will prevent yourself from writing a lot of code to intera
 yarn add cypress-plugin-stripe-elements
 ```
 
-2. Add the Plugin to your project's `cypress.config.ts` file, you can find the file here: [cypress support index file](cypress/support/index.js)
+2. Import the plugin file in any of the tests where you need to test Stripe:
 
 ```javascript
-// cypress/support/index.js
 import "cypress-plugin-stripe-elements";
 ```
 
@@ -64,4 +63,4 @@ cy.get("#card-element").within(() => {
 
 You can find the complete example code here:
 
-- [Stripe Elements Cypress Example](cypress/integration/stripe-elements.ts) ✨
+- [Stripe Elements Cypress Example](./cypress/e2e/stripe-elements.cy.ts) ✨

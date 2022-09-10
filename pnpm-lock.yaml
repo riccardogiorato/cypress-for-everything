@@ -63,10 +63,10 @@ importers:
   examples/mailosaur:
     specifiers:
       cypress: ^10.6.0
-      cypress-mailosaur: ^2.11.0
+      cypress-mailosaur: ^2.12.0
     dependencies:
       cypress: 10.6.0
-      cypress-mailosaur: 2.11.0_cypress@10.6.0
+      cypress-mailosaur: 2.12.0_cypress@10.6.0
 
   examples/mailslurp:
     specifiers:
@@ -693,8 +693,8 @@ packages:
       cypress: 10.6.0
     dev: false
 
-  /cypress-mailosaur/2.11.0_cypress@10.6.0:
-    resolution: {integrity: sha512-YteY8jE88qA1OfQoMla5kL7B0233C3ymYHb9rjhwQ1EMrHR2r7LHvJD/HbWBjWusUvAA9AO09nv8p1bUnwswHg==}
+  /cypress-mailosaur/2.12.0_cypress@10.6.0:
+    resolution: {integrity: sha512-30Cq1Z+KSBbovqEie8L8rxYTApRhq1jsXKseN96dNJFBSG4+UhnnJOlRFXt8Snl5qDnarcIzXeD+bRYfjPftLw==}
     engines: {node: '>= v10.0.0'}
     peerDependencies:
       cypress: '>= 2.1.0'

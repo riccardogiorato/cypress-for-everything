@@ -1,3 +1,5 @@
+import "cypress-mailslurp";
+
 /// <reference types="cypress-mailslurp" />
 
 describe("Tesla Enagage Email Registration", async function () {

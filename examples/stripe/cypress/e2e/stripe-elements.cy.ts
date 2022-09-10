@@ -1,3 +1,5 @@
+import "cypress-plugin-stripe-elements";
+
 describe("Stripe Elements", () => {
   it("Stripe Elements Demo works!", () => {
     cy.visit("https://stripe-payments-demo.appspot.com/");

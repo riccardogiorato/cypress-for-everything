@@ -2,7 +2,7 @@
 
 ## Examples
 
-- [tesla-inputs.cy.ts](cypress/e2e/tesla-inputs.cy.ts) ✨
+- [tesla-inputs.cy.ts](./cypress/e2e/tesla-inputs.cy.ts) ✨
 
 ## How does it work?
 

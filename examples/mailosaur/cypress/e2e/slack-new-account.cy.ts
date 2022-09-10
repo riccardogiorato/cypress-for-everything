@@ -1,3 +1,5 @@
+require("cypress-mailosaur");
+
 /// <reference types="cypress-mailosaur" />
 
 describe("Slack New Account Email", async function () {
