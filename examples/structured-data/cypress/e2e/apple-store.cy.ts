@@ -15,9 +15,9 @@ describe("Apple Structured Data", () => {
     });
   });
   it("apple iphone 12 has BreadcrumbList and Product ", () => {
-    cy.visit("https://www.apple.com/iphone-12");
+    cy.visit("https://www.apple.com/shop/buy-iphone/iphone-12");
     cy.task("structuredData", {
-      url: "https://www.apple.com/iphone-12",
+      url: "https://www.apple.com/shop/buy-iphone/iphone-12",
       schemas: ["BreadcrumbList", "Product"],
     }).then((result) => {
       const resultSD = result as StructuredDataResult;
@@ -28,7 +28,7 @@ describe("Apple Structured Data", () => {
   });
   it("apple iphone 12 shop page has BreadcrumbList, Product and FAQPage ", () => {
     cy.task("structuredData", {
-      url: "https://www.apple.com/shop/buy-iphone/iphone-12",
+      url: "https://www.apple.com/us/shop/goto/buy_iphone/iphone_12",
       schemas: ["BreadcrumbList", "Product", "FAQPage"],
     }).then((result) => {
       const resultSD = result as StructuredDataResult;

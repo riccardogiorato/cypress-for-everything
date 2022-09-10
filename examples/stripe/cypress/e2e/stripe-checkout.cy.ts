@@ -10,7 +10,7 @@ describe("Stripe Checkout", () => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("url");
       cy.visit(response.body.url);
-      cy.url().should("contains", "https://checkout.stripe.com/pay/");
+      cy.url().should("contains", "https://checkout.stripe.com/c/pay/");
 
       cy.get("#email").type("SatoshiNakamoto@email.com");
       cy.get("#cardNumber").type("4242424242424242");
