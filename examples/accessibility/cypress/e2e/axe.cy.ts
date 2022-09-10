@@ -1,3 +1,5 @@
+import "cypress-axe";
+
 describe("Accessibility test with Axe Core", async function () {
   it("A11Y on deque.com", function () {
     cy.visit("https://deque.com/axe/");
