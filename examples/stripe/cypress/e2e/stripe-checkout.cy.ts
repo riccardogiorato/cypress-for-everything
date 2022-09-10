@@ -5,7 +5,7 @@ describe("Stripe Checkout", () => {
 
   it("Stripe Checkout test mode works!", () => {
     cy.request(
-      "https://checkout.stripe.dev/api/demo-session?country=us&billingPeriod=monthly&hasBgColor=false&hasBillingAndShipping=false&hasCoupons=false&hasFreeTrial=false&hasShippingRate=false&hasTaxes=false&mode=payment&wallet=googlePay&hasPolicies=false&billingType=flat"
+      "https://checkout.stripe.dev/api/demo-session?country=us&billingPeriod=monthly&hasBgColor=false&bgColor=%2523ffffff&buttonColor=%2523192552&hasBillingAndShipping=false&hasCoupons=false&hasFreeTrial=false&hasShippingRate=false&hasTaxes=false&mode=payment&wallet=applePay&hasPolicies=false&billingType=flat&hasUpsells=false&hasPhoneNumber=false&borderStyle=rounded&fontStyle=System&hasCrossSells=false"
     ).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("url");

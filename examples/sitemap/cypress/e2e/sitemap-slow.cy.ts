@@ -1,3 +1,7 @@
+Cypress.on("uncaught:exception", (err, runnable) => {
+  return false;
+});
+
 describe("Sitemap Slow Check", () => {
   // this is needed cause sitemap urls have redirects to other domains
   it("should succesfully load each url in the sitemap", () => {

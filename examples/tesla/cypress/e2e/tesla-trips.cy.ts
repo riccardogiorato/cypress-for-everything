@@ -11,7 +11,7 @@ describe("Tesla Trips", () => {
     cy.contains("Plan My Trip").first().click({ force: true });
 
     cy.url().should("eq", baseUrlTesla + "trips");
-    cy.get("h1").should("have.text", "Go Anywhere");
+    cy.get("h1").should("include.text", "Go Anywhere");
   });
   it("tesla.com trips page should create route from Italy to Germany", () => {
     cy.intercept({
@@ -20,7 +20,7 @@ describe("Tesla Trips", () => {
     }).as("getTrips");
 
     cy.visit(baseUrlTesla + "trips");
-    cy.get("h1").should("have.text", "Go Anywhere");
+    cy.get("h1").should("include.text", "Go Anywhere");
 
     cy.get("input[placeholder='Enter location']").type("Padova Italy");
     cy.get("#autocomplete > li").should("have.length.above", 0);
