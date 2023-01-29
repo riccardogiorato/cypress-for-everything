@@ -175,7 +175,7 @@ jobs:
         example: ${{fromJson(needs.build.outputs.matrix)}}
     steps:
       - name: Delete Report XML Artifact
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v2
         id: restore-build
         with:
           name: report-xml-${{ matrix.example }}
