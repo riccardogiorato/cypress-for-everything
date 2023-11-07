@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -30,8 +34,8 @@ importers:
         specifier: ^10.7.0
         version: 10.7.0
       cypress-axe:
-        specifier: ^1.0.0
-        version: 1.0.0(axe-core@4.4.3)(cypress@10.7.0)
+        specifier: ^1.5.0
+        version: 1.5.0(axe-core@4.4.3)(cypress@10.7.0)
 
   examples/auth-google:
     dependencies:
@@ -689,12 +693,12 @@ packages:
     resolution: {integrity: sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==}
     dev: false
 
-  /cypress-axe@1.0.0(axe-core@4.4.3)(cypress@10.7.0):
-    resolution: {integrity: sha512-QBlNMAd5eZoyhG8RGGR/pLtpHGkvgWXm2tkP68scJ+AjYiNNOlJihxoEwH93RT+rWOLrefw4iWwEx8kpEcrvJA==}
+  /cypress-axe@1.5.0(axe-core@4.4.3)(cypress@10.7.0):
+    resolution: {integrity: sha512-Hy/owCjfj+25KMsecvDgo4fC/781ccL+e8p+UUYoadGVM2ogZF9XIKbiM6KI8Y3cEaSreymdD6ZzccbI2bY0lQ==}
     engines: {node: '>=10'}
     peerDependencies:
       axe-core: ^3 || ^4
-      cypress: ^10
+      cypress: ^10 || ^11 || ^12 || ^13
     dependencies:
       axe-core: 4.4.3
       cypress: 10.7.0
