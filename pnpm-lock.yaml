@@ -80,8 +80,8 @@ importers:
         specifier: ^10.7.0
         version: 10.7.0
       cypress-mailosaur:
-        specifier: ^2.12.0
-        version: 2.12.0(cypress@10.7.0)
+        specifier: ^2.14.0
+        version: 2.14.0(cypress@10.7.0)
 
   examples/mailslurp:
     dependencies:
@@ -704,8 +704,8 @@ packages:
       cypress: 10.7.0
     dev: false
 
-  /cypress-mailosaur@2.12.0(cypress@10.7.0):
-    resolution: {integrity: sha512-30Cq1Z+KSBbovqEie8L8rxYTApRhq1jsXKseN96dNJFBSG4+UhnnJOlRFXt8Snl5qDnarcIzXeD+bRYfjPftLw==}
+  /cypress-mailosaur@2.14.0(cypress@10.7.0):
+    resolution: {integrity: sha512-pevHXmSJPaaiulfeEV7LV5nYnPhxNc8ukEAOm1/XpFG8nIDoc6rilJ+xWkNEDO8TWqJH/N3/c0QBxiS6xw38ng==}
     engines: {node: '>= v10.0.0'}
     peerDependencies:
       cypress: '>= 2.1.0'
