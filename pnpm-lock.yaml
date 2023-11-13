@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       junit-report-merger:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
       xml-js:
         specifier: ^1.6.11
         version: 1.6.11
@@ -631,9 +631,9 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
-  /commander@10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
+  /commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
+    engines: {node: '>=16'}
     dev: false
 
   /commander@5.1.0:
@@ -985,8 +985,8 @@ packages:
     engines: {'0': node >=0.6.0}
     dev: false
 
-  /fast-glob@3.2.11:
-    resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
+  /fast-glob@3.3.2:
+    resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
     engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -1437,13 +1437,13 @@ packages:
       verror: 1.10.0
     dev: false
 
-  /junit-report-merger@6.0.2:
-    resolution: {integrity: sha512-Jk9PXeaJhbgo3aUNza2r24JgxYzLUtCk2kwrub8fbmDuWUdXhT/nfbM2MlU3JQiFbjVud1bzBWdzr9/GGBWfmA==}
+  /junit-report-merger@6.0.3:
+    resolution: {integrity: sha512-gtGHrq+otZLtSP1FPDSKYiFkDayCoEx1wslgzodLVxckwL8XgdbQlko1mz9wdXqieeniCQjkJFrTtqDEsTWzTQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      commander: 10.0.1
-      fast-glob: 3.2.11
+      commander: 11.1.0
+      fast-glob: 3.3.2
       xmlbuilder2: 3.1.1
     dev: false
 
