@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/node": "^17.0.40",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.2"
   },
   "dependencies": {
     "junit-report-merger": "^6.0.2",
