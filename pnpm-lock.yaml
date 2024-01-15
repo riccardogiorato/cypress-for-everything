@@ -89,8 +89,8 @@ importers:
         specifier: ^10.7.0
         version: 10.7.0
       cypress-mailslurp:
-        specifier: ^1.5.0
-        version: 1.5.0
+        specifier: ^1.9.0
+        version: 1.9.0
 
   examples/metatags:
     dependencies:
@@ -713,11 +713,11 @@ packages:
       cypress: 10.7.0
     dev: false
 
-  /cypress-mailslurp@1.5.0:
-    resolution: {integrity: sha512-gK222pivxpTDpX0fXe09VPQOesaVhuldD/O9vr+gI6GIngYTeoBNiSi8wbEf/t1fofpt22aN2IayFDv2W+/99w==}
+  /cypress-mailslurp@1.9.0:
+    resolution: {integrity: sha512-vjmbVtCQ2fPjKpwKru9UXlwG3tVsUuJ7nRktbBz7QYRQS0k+VMaKto4DItLWhkE7m+UqKg3mAPgRWkuYAD/IeQ==}
     engines: {node: '>=10'}
     dependencies:
-      mailslurp-client: 15.13.3
+      mailslurp-client: 15.17.5
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -1576,8 +1576,8 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /mailslurp-client@15.13.3:
-    resolution: {integrity: sha512-WG1D8QUI+NWdZaPYkzfh0YFUfWQnRW9kAE4dBMLZGAYziu2hBjEzbEVKwM2fXojoGMl7THa1f4ZaDCSjxVRN7g==}
+  /mailslurp-client@15.17.5:
+    resolution: {integrity: sha512-QLB6Y+36bqrH1gBnuUDne++1ThzYZSclxNv2C/Twge2ffKb64roLLFdZ94uIu2QgLKTcYqokV5wVbJx2j9Sm+g==}
     dependencies:
       cross-fetch: 3.1.5
       es6-promise: 4.2.8
