@@ -9,15 +9,15 @@
   "scripts": {
     "pnpm:install": "npx pnpm add -g pnpm",
     "merge": "pnpm ts-node ./scripts/merge-cypress-xml.ts",
-    "upgradeAll": "pnpm up -L -i -r"
+    "upgradeAll": "pnpm up -i -r --latest"
   },
   "devDependencies": {
-    "@types/node": "^17.0.40",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
-    "junit-report-merger": "^6.0.2",
+    "junit-report-merger": "^7.0.1",
     "xml-js": "^1.6.11"
   },
   "engines": {

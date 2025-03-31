@@ -1,2 +1,5 @@
 packages:
-  - "examples/**"
+  - examples/**
+onlyBuiltDependencies:
+  - core-js
+  - cypress
