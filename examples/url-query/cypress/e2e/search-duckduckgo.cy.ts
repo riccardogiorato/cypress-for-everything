@@ -2,8 +2,8 @@ describe("DuckdDuckGo Search with Url Search parameters", () => {
   it("should display different url query parameters", () => {
     cy.visit("https://duckduckgo.com/");
     const searchedText = "testing duckduckgo search";
-    cy.get("#search_form_homepage").type(searchedText);
-    cy.get("#search_button_homepage").click();
+    cy.get("#searchbox_input").type(searchedText);
+    cy.get('button[aria-label="Search"]').click();
 
     cy.url().should("include", "q=");
 
