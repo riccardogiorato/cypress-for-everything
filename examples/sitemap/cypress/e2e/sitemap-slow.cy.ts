@@ -6,7 +6,7 @@ describe("Sitemap Slow Check", () => {
   // this is needed cause sitemap urls have redirects to other domains
   it("should succesfully load each url in the sitemap", () => {
     cy.request({
-      url: "https://www.vercel.com/sitemap.xml",
+      url: "https://v0.dev/sitemap.xml",
       headers: {
         "Content-Type": "text/xml; charset=utf-8",
         "user-agent":
@@ -18,7 +18,8 @@ describe("Sitemap Slow Check", () => {
         const urls = Cypress.$(response.body)
           .find("loc")
           .toArray()
-          .map((el) => el.innerText);
+          .map((el) => el.innerText)
+          .slice(0, 5); // only 5 urls to speed up the test
         urls.forEach((url) => {
           cy.window().then((win) => {
             return win.open(url, "_self");

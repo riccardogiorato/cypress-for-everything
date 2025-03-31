@@ -1,7 +1,7 @@
 describe("Sitemap Fast Check", () => {
   it("should succesfully load each url in the sitemap", () => {
     cy.request({
-      url: "https://www.vercel.com/sitemap.xml",
+      url: "https://v0.dev/sitemap.xml",
       headers: {
         "user-agent":
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36",
