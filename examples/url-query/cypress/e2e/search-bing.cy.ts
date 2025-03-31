@@ -16,7 +16,8 @@ describe("Bing Search with Url Search parameters", () => {
       }
     });
 
-    cy.get("#sb_form_q").type(searchedText + "{enter}");
+    cy.get("#sb_form_q").type(searchedText);
+    cy.get("#sb_form_q").type("{enter}");
 
     cy.url().should("include", "q=");
     cy.url().should("include", "qs=n");
