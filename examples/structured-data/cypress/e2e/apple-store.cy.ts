@@ -14,9 +14,9 @@ describe("Apple Structured Data", () => {
       expect(resultSD.passed[2].schema).to.equal("WebSite");
     });
   });
-  it("apple iphone 12 shop page has BreadcrumbList, Product and FAQPage ", () => {
+  it("apple iPhone 16 shop page has BreadcrumbList, Product and FAQPage ", () => {
     cy.task("structuredData", {
-      url: "https://www.apple.com/shop/buy-iphone/iphone-12",
+      url: "https://www.apple.com/shop/buy-iphone/iphone-16",
       schemas: ["BreadcrumbList", "Product", "FAQPage"],
     }).then((result) => {
       const resultSD = result as StructuredDataResult;
@@ -28,16 +28,15 @@ describe("Apple Structured Data", () => {
   });
   it("apple latest newsroom article has NewsArticle and BreadcrumbList ", () => {
     cy.visit("https://www.apple.com/newsroom/");
-    cy.get("#everydayfeed > .section-content > .section-tiles")
-      .find("li")
-      .first()
-      .click();
+
+    cy.get(".section-tiles li:first-child a").first().click();
     cy.location().then((location) => {
       cy.task("structuredData", {
         url: location.href,
         schemas: ["NewsArticle", "BreadcrumbList"],
       }).then((result) => {
         const resultSD = result as StructuredDataResult;
+        console.log(resultSD.passed.length);
         expect(resultSD.passed.length).to.equal(2);
         expect(resultSD.passed[0].schema).to.equal("NewsArticle");
         expect(resultSD.passed[1].schema).to.equal("BreadcrumbList");
