@@ -1,27 +1,21 @@
-describe("Tesla HTTP requests and redirects", () => {
-  const baseUrlTesla = "https://www.tesla.com/";
-
-  const urlHttp = "http://tesla.com";
-  it(urlHttp + " end location", () => {
-    cy.visit(urlHttp);
-    cy.url().should("eq", baseUrlTesla);
-  });
-  it(urlHttp + " redirect", () => {
+describe("Cypress.io HTTP requests and redirects", () => {
+  const baseUrlWebsite = "https://www.cypress.io/";
+  const urlHttp = "http://cypress.io";
+  it(urlHttp + " redirect failed", () => {
     cy.request({
       url: urlHttp,
-      followRedirect: false, // turn off following redirects
+      followRedirect: false,
+      failOnStatusCode: false,
     }).then((resp) => {
-      // redirect status code is 301
       expect(resp.status).to.eq(301);
-      expect(resp.redirectedToUrl).to.eq("http://www.tesla.com/");
+      expect(resp.redirectedToUrl).to.eq("https://cypress.io/");
     });
   });
 
-  const urlHttpWww = "http://www.tesla.com/";
+  const urlHttpWww = "http://www.cypress.io/";
   it(urlHttpWww + " end location", () => {
     cy.visit(urlHttpWww);
-    cy.wait(500);
-    cy.url().should("eq", baseUrlTesla);
+    cy.url().should("eq", "https://www.cypress.io/");
   });
   it(urlHttpWww + " redirect", () => {
     cy.request({
@@ -29,14 +23,14 @@ describe("Tesla HTTP requests and redirects", () => {
       followRedirect: false,
     }).then((resp) => {
       expect(resp.status).to.eq(301);
-      expect(resp.redirectedToUrl).to.eq(baseUrlTesla);
+      expect(resp.redirectedToUrl).to.eq("https://www.cypress.io/");
     });
   });
 
-  const urlHttps = "https://tesla.com/";
+  const urlHttps = "https://cypress.io/";
   it(urlHttps + " end location", () => {
     cy.visit(urlHttps);
-    cy.url().should("eq", baseUrlTesla);
+    cy.url().should("eq", baseUrlWebsite);
   });
   it(urlHttps + " redirect", () => {
     cy.request({
@@ -44,14 +38,14 @@ describe("Tesla HTTP requests and redirects", () => {
       followRedirect: false,
     }).then((resp) => {
       expect(resp.status).to.eq(301);
-      expect(resp.redirectedToUrl).to.eq(baseUrlTesla);
+      expect(resp.redirectedToUrl).to.eq(baseUrlWebsite);
     });
   });
 
-  const urlHttpsWww = "https://www.tesla.com/";
+  const urlHttpsWww = "https://www.cypress.io/";
   it(urlHttpsWww + " end location", () => {
     cy.visit(urlHttpsWww);
-    cy.url().should("eq", baseUrlTesla);
+    cy.url().should("eq", baseUrlWebsite);
   });
   it("200 homepage response", () => {
     cy.request({
@@ -63,7 +57,7 @@ describe("Tesla HTTP requests and redirects", () => {
     });
   });
 
-  const url404test = "https://www.tesla.com/not-a-real-page";
+  const url404test = "https://www.cypress.io/not-a-real-page";
   it("404 'not found' response", () => {
     cy.request({
       url: url404test,
@@ -74,7 +68,6 @@ describe("Tesla HTTP requests and redirects", () => {
       expect(resp.redirectedToUrl).to.eq(undefined);
     });
     cy.visit(url404test, { failOnStatusCode: false });
-    cy.get(".error-code").should("contain", "404");
-    cy.get(".error-text").should("contain", "Page not found");
+    cy.get("body").should("contain", "Page Not Found");
   });
 });
