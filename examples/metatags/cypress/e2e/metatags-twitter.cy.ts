@@ -1,14 +1,15 @@
 describe("Metadata Twitter", () => {
-  const title = "Electric Cars, Solar & Clean Energy | Tesla";
-  const baseUrlTesla = "https://www.tesla.com/";
-  before(function () {
+  const title =
+    "Vercel: Build and deploy the best web experiences with the Frontend Cloud";
+  const baseUrlVercel = "https://vercel.com/";
+  beforeEach(function () {
     // runs once before all tests in the block
-    cy.visit(baseUrlTesla);
+    cy.visit(baseUrlVercel);
   });
   /**
    * Twitter Metadata
    */
-  it("tesla.com should have correct twitter:title", () => {
+  it("vercel.com should have correct twitter:title", () => {
     cy.get('head meta[name="twitter:title"]').should(
       "have.attr",
       "content",
@@ -17,8 +18,8 @@ describe("Metadata Twitter", () => {
   });
 
   const description =
-    "Tesla is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses.";
-  it("tesla.com should have correct twitter:description", () => {
+    "Vercel's Frontend Cloud gives developers the frameworks, workflows, and infrastructure to build a faster, more personalized web.";
+  it("vercel.com should have correct twitter:description", () => {
     cy.get('head meta[name="twitter:description"]').should(
       "have.attr",
       "content",
@@ -26,27 +27,19 @@ describe("Metadata Twitter", () => {
     );
   });
 
-  it("tesla.com should have correct twitter:url", () => {
-    cy.get('head meta[name="twitter:url"]').should(
+  it("vercel.com should have correct twitter:card", () => {
+    cy.get('head meta[name="twitter:card"]').should(
       "have.attr",
       "content",
-      baseUrlTesla
+      "summary_large_image"
     );
   });
 
-  it("tesla.com should have correct twitter:site", () => {
-    cy.get('head meta[name="twitter:site"]').should(
+  it("vercel.com should have correct twitter:image:title", () => {
+    cy.get('head meta[name="twitter:image:title"]').should(
       "have.attr",
       "content",
-      "@tesla"
-    );
-  });
-
-  it("tesla.com should have correct twitter:creator", () => {
-    cy.get('head meta[name="twitter:creator"]').should(
-      "have.attr",
-      "content",
-      "@tesla"
+      "Vercel OG Image"
     );
   });
 });

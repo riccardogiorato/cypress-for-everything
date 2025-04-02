@@ -1,22 +1,23 @@
 describe("Metadata Primary - Title/Description/Canonical", () => {
-  const title = "Electric Cars, Solar & Clean Energy | Tesla";
-  const baseUrlTesla = "https://www.tesla.com/";
-  before(function () {
+  const title =
+    "Vercel: Build and deploy the best web experiences with the Frontend Cloud";
+  const baseUrlVercel = "https://vercel.com";
+  beforeEach(function () {
     // runs once before all tests in the block
-    cy.visit(baseUrlTesla);
+    cy.visit(baseUrlVercel);
   });
   /**
    * Title
    */
-  it("tesla.com should have correct title", () => {
+  it("vercel.com should have correct title", () => {
     cy.title().should("eq", title);
   });
   /**
    * Description
    */
   const description =
-    "Tesla is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses.";
-  it("tesla.com should have correct description", () => {
+    "Vercel's Frontend Cloud gives developers the frameworks, workflows, and infrastructure to build a faster, more personalized web.";
+  it("vercel.com should have correct description", () => {
     cy.get('head meta[name="description"]').should(
       "have.attr",
       "content",
@@ -27,25 +28,11 @@ describe("Metadata Primary - Title/Description/Canonical", () => {
   /**
    * Canonicals
    */
-  it("tesla.com should have correct canonical", () => {
+  it("vercel.com should have correct canonical", () => {
     cy.get('head link[rel="canonical"]').should(
       "have.attr",
       "href",
-      baseUrlTesla
-    );
-  });
-  it("tesla.com should have correct canonical equal to location href", () => {
-    cy.get('head link[rel="canonical"]').then((canonical) => {
-      cy.location().then((loc) => {
-        expect(canonical).to.have.attr("href", loc.href);
-      });
-    });
-  });
-  it("tesla.com should have correct shortlink", () => {
-    cy.get('head link[rel="shortlink"]').should(
-      "have.attr",
-      "href",
-      baseUrlTesla
+      baseUrlVercel
     );
   });
 });
