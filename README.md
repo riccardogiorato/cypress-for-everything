@@ -7,9 +7,6 @@
       <a href="https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml">
         <img src="https://github.com/riccardogiorato/cypress-for-everything/actions/workflows/main.yml/badge.svg?branch=main&event=push" alt="ci" />
       </a>
-      <a href="https://gitpod.io/#https://github.com/riccardogiorato/cypress-for-everything">
-        <img src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod" alt="ready to code on gitpod"/>
-      </a>
       <a href="https://github.com/riccardogiorato/cypress-for-everything/stargazers">
         <img src="https://img.shields.io/github/stars/riccardogiorato/cypress-for-everything" alt="Github Stars" />
       </a>
@@ -18,15 +15,12 @@
       </a>
    </p>
 
-## Getting Started
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/riccardogiorato/cypress-for-everything)
-
 ## Examples
 
 You can find all the examples listed inside the "examples" folder here:
 
 ### [examples/](examples/)
+
 - [examples/accessibility](examples/accessibility): testing for accessibility issues or A11Y with Axe.
 - [examples/form-inputs](examples/form-inputs): testing out different types of forms and inputs.
 - [examples/gmail](examples/gmail): testing email workflows with free Gmail accounts or with paid GSuite accounts from UI submission to email delivery.
@@ -37,7 +31,6 @@ You can find all the examples listed inside the "examples" folder here:
 - [examples/sitemap](examples/sitemap): we will prevent dead links and unwanted pages to appear from the sitemap.xml file by checking all of the sitemap links.
 - [examples/stripe](examples/stripe): Stripe is the most popular payment processing service in the world and we make some simple tests for you to get started!
 - [examples/structured-data](examples/structured-data): Google loves Structured Data and we will test them without having to manually do this step by using a great NPM package called "structured-data-testing-tool".
-- [examples/tesla](examples/tesla): I really live Tesla so I will test various parts of their website to make sure they are working as expected.
 - [examples/url-query](examples/url-query): Url query parameters are the base of the dynamic web and they are used by all the main search engines to implement their search functionalities and we will test them.
 
 ### Support and Sponsors
