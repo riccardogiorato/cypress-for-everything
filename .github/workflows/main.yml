@@ -157,7 +157,7 @@ jobs:
           pnpm merge
 
       - name: Publish Cypress E2E Report 📖
-        uses: dorny/test-reporter@v1
+        uses: dorny/test-reporter@v2
         with:
           name: Cypress Tests Results 📖
           path: report.xml
