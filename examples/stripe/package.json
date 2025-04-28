@@ -8,7 +8,7 @@
     "test:real": "cypress run --browser chrome"
   },
   "dependencies": {
-    "cypress": "^14.3.0",
+    "cypress": "^14.3.2",
     "cypress-plugin-stripe-elements": "^1.0.2"
   }
 }
