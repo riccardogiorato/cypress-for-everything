@@ -8,6 +8,6 @@
     "testt": "HTTP_PROXY=$(echo STATIC_IP_HTTP_PROXY) cypress run --browser chrome"
   },
   "dependencies": {
-    "cypress": "^14.3.3"
+    "cypress": "^14.4.0"
   }
 }
