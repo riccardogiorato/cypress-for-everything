@@ -17,7 +17,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "junit-report-merger": "^7.0.1",
+    "junit-report-merger": "^8.0.0",
     "xml-js": "^1.6.11"
   },
   "engines": {
