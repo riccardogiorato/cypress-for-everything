@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "cypress": "^14.3.3",
-    "cypress-mailslurp": "^1.10.0"
+    "cypress-mailslurp": "^1.11.1"
   }
 }
